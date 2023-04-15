@@ -12,7 +12,7 @@ function Header() {
 
     <Navbar
       fluid={true}
-      className="header"
+      className="header bg-transparent"
       id="header"
       rounded={true}
     >

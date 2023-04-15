@@ -46,7 +46,7 @@ export default function Home() {
           {`// hello my name is`}
         </h2>
       </pre>
-      <pre className="z-50 text-[12px] label leading-[12px] grid justify-start">
+      <pre className="z-50 hidden md:block text-[12px] label leading-[12px]grid justify-start">
         <code>
           {`
  222222222222222         000000000                                                             tttt                                  1111111        000000000     
@@ -73,6 +73,17 @@ export default function Home() {
                                                  ggg::::::ggg                                                                                                      
                                                     gggggg                                                                                                         
          `}
+        </code>
+      </pre>
+      <pre className="z-50 block md:hidden text-[10px] label leading-[10px] grid justify-start m-5">
+        <code>
+          {` 2222    00000                     tt              1   00000  
+222222  00   00    gggggg  oooo    tt     oooo    111 00   00 
+    222 00   00   gg   gg oo  oo   tttt  oo  oo    11 00   00 
+ 2222   00   00   ggggggg oo  oo   tt    oo  oo    11 00   00 
+2222222  00000         gg  oooo     tttt  oooo    111  00000  
+                   ggggg                                      
+`}
         </code>
       </pre>
       <pre>

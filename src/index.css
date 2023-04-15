@@ -50,6 +50,10 @@ a:active {
   text-decoration: none;
 }
 
+.header, .footer {
+  background-color: transparent;
+}
+
 @media only screen and (min-width: 768px) {
   .header, .footer {
     background-image: linear-gradient(120deg, rgba(94,188,226,255), rgba(233,158,243,255));
