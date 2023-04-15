@@ -1,5 +1,5 @@
 // dependencies
-import React, { useState } from "react";
+import React from "react";
 import { Navbar } from "flowbite-react";
 import logo from "../assets/logo.png";
 import "../index.css"
@@ -12,37 +12,37 @@ function Header() {
 
     <Navbar
       fluid={true}
-      className=""
+      className="header"
       id="header"
       rounded={true}
     >
       <Navbar.Brand href="/">
         <img src={logo} className="mr-3 h-6 sm:h-9" alt="Logo" />
         <span className="">
-          20goto10
+          20goto10 家
         </span>
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse>
         <Navbar.Link href="/about">
           <span className="">
-            About
+            About 約
           </span>
         </Navbar.Link>
         <Navbar.Link href="/songs">
           <span className="">
-            Songs
+            Songs 曲
           </span>
         </Navbar.Link>
         <Navbar.Link href="/artist">
           <span className="">
-            Artist
+            Artist アーティスト
           </span>
         </Navbar.Link>
 
         <Navbar.Link href="/contact">
           <span className="">
-            Contact
+            Contact コンタクト
           </span>
         </Navbar.Link>
       </Navbar.Collapse>

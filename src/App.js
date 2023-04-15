@@ -18,7 +18,7 @@ function App() {
       return (
           <Router>
                 <Header />
-                <div className="container flex flex-col justify-center items-center md:ml-[5rem]">
+                <div className="container flex flex-col md:ml-[5rem]">
                   <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/contact" element={<Contact />} />

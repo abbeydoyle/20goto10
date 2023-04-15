@@ -6,7 +6,7 @@ import { TbBrandGithubCopilot, TbBrandSpotify } from "react-icons/tb";
 // export linkable footer
 export default function FooterApp() {
   return (
-    <footer>
+    <footer className="footer fixed bottom-0">
       <div className="px-4 py-6 bg-transparent flex items-center justify-between">
         <span className="text-sm text-gray-500 text-center">
           © 2023{" "}
