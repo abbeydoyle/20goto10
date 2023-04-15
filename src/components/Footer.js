@@ -2,11 +2,12 @@
 import React from "react";
 import { TbBrandGithubCopilot, TbBrandSpotify } from "react-icons/tb";
 
-// TODO: update links
+
 // export linkable footer
 export default function FooterApp() {
   return (
-    <footer className="footer fixed bottom-0">
+    <>
+    <footer className="footer">
       <div className="px-4 py-6 bg-transparent flex items-center justify-between">
         <span className="text-sm text-gray-500 text-center">
           © 2023{" "}
@@ -44,5 +45,6 @@ export default function FooterApp() {
         </div>
       </div>
     </footer>
+    </>
   );
 }

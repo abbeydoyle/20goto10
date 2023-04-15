@@ -38,15 +38,16 @@ export default function Home() {
 
   return (
     <>
+    <div className="h-fit grid">
       <pre>
         <h2
-          className="z-50 start-0 pb-[2%] pt-[5%]"
+          className="z-30 start-0 pb-[2%] pt-[5%]"
           style={{ ...h4initialStyle, ...h4Style }}
         >
           {`// hello my name is`}
         </h2>
       </pre>
-      <pre className="z-50 hidden md:block text-[12px] label leading-[12px]grid justify-start">
+      <pre className="z-10 hidden md:block text-[12px] label leading-[12px]grid justify-start">
         <code>
           {`
  222222222222222         000000000                                                             tttt                                  1111111        000000000     
@@ -75,7 +76,7 @@ export default function Home() {
          `}
         </code>
       </pre>
-      <pre className="z-50 block md:hidden text-[10px] label leading-[10px] grid justify-start m-5">
+      <pre className="z-30 block md:hidden text-[10px] label leading-[10px] grid justify-start m-5">
         <code>
           {` 2222    00000                     tt              1   00000  
 222222  00   00    gggggg  oooo    tt     oooo    111 00   00 
@@ -88,12 +89,13 @@ export default function Home() {
       </pre>
       <pre>
         <h2
-          className="z-50 pr-[20%] welcomesite pb-[20%]"
+          className="z-30 pr-[20%] welcomesite"
           style={{ ...h2initialStyle, ...h2Style }}
         >
           {`// welcome to my site`}
         </h2>
       </pre>
+      </div>
     </>
   );
 }

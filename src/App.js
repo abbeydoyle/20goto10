@@ -17,6 +17,7 @@ import './assets/fonts/Modeseven.ttf'
 function App() {
       return (
           <Router>
+            <div>
                 <Header />
                 <div className="container flex flex-col md:ml-[5rem]">
                   <Routes>
@@ -29,6 +30,7 @@ function App() {
                 </div>
                 <ScrollToTop smooth component={<MySVG />} className="bg-transparent grid place-content-center" />
                 <FooterApp />
+                </div>
           </Router>
       );
     }
