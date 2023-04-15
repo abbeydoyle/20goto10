@@ -38,9 +38,14 @@ export default function Home() {
 
   return (
     <>
-      <h2 className="z-50 start-0 pb-[2%] pt-[5%]" style={{ ...h4initialStyle, ...h4Style }}>
-         hello my name is
-      </h2>
+      <pre>
+        <h2
+          className="z-50 start-0 pb-[2%] pt-[5%]"
+          style={{ ...h4initialStyle, ...h4Style }}
+        >
+          {`// hello my name is`}
+        </h2>
+      </pre>
       <pre className="z-50 text-[12px] label leading-[12px] grid justify-start">
         <code>
           {`
@@ -70,10 +75,14 @@ export default function Home() {
          `}
         </code>
       </pre>
-
-      <h2 className="z-50 pr-[20%] welcomesite pb-[20%]" style={{ ...h2initialStyle, ...h2Style }}>
-         welcome to my site
-      </h2>
+      <pre>
+        <h2
+          className="z-50 pr-[20%] welcomesite pb-[20%]"
+          style={{ ...h2initialStyle, ...h2Style }}
+        >
+          {`// welcome to my site`}
+        </h2>
+      </pre>
     </>
   );
 }
