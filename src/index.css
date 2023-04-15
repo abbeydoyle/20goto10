@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Modeseven";
+  src: local("Modeseven"),
+   url("./assets/fonts/Modeseven.ttf") format("truetype");
+  font-weight: normal;
+  }
+
+/* root app styling */
+body {
+  padding: 2.5rem;
+  line-height: 1.5;
+  margin: 0;
+  cursor: pointer !important
+  /* cursor: url("./assets/logo.png"), auto; */
+}
+
+* {
+  font-family: "Modeseven";
+}
+
+a:link {
+  text-decoration: none;
+  cursor: pointer !important
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .aboutHeader {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://res.cloudinary.com/duxmtidm1/image/upload/v1680803471/389877_olc7hw.jpg");
+    padding-top: 3rem;
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: 100vw;
+    position: relative;
+    right: 50%;
+    width: 100vw;
+    top: 50%;
+    height: 65vw;
+    margin-top: -5vw;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://res.cloudinary.com/duxmtidm1/image/upload/v1680803471/389877_olc7hw.jpg");
+    padding-top: 3rem;
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: 100vw;
+    position: relative;
+    right: 50%;
+    width: 100vw;
+    top: 50%;
+    height: 12vw;
+    margin-top: -5vw;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.venncirctop {
+  filter: alpha(opacity=50);
+  background-color: rgba(92, 91, 89, 0.5);
+  position: relative;
+}
+.venncirctop:hover {
+  filter: alpha(opacity=50);
+  background-color: rgba(106, 101, 97, 0.9);
+}
+.venncirclft {
+  filter: alpha(opacity=50);
+  background-color: rgba(9, 61, 92, 0.5);
+}
+.venncirclft:hover {
+  filter: alpha(opacity=50);
+  background-color: rgba(55, 104, 140, 0.9);
+}
+.venncircrt {
+  filter: alpha(opacity=50);
+  background-color: rgba(94, 87, 123, 0.5);
+}
+.venncircrt:hover {
+  filter: alpha(opacity=50);
+  background-color: rgba(98, 95, 117, 0.9);
+}
+.venncircbtm {
+  filter: alpha(opacity=50);
+  background-color: rgba(98, 119, 70, 0.5);
+}
+.venncircbtm:hover {
+  filter: alpha(opacity=50);
+  background-color: rgba(58, 78, 32, 0.9);
+}
+
+.gallery {
+  --s: 200px; /* control the size */
+  --g: 10px;  /* control the gap */
+  display: grid;
+  margin: calc(var(--s) + var(--g));
+}
+
+.gallery > img {
+  grid-area: 1/1;
+  width: var(--s);
+  aspect-ratio: 0.866;
+  object-fit: cover;
+  clip-path: polygon(0% 25%,0% 75%,50% 100%,100% 75%,100% 25%,50% 0);
+  transform: translate(var(--_x,0),var(--_y,0)) scale(var(--_t,1));
+  cursor: pointer;
+  filter: grayscale(80%);
+  transition: .2s linear;
+}
+.gallery > img:hover {
+  filter: grayscale(0);
+  z-index: 1;
+  --_t: 1.2;
+}
+
+.gallery > img:nth-child(1) {--_x: calc(-100% - var(--g))}
+.gallery > img:nth-child(7) {--_x: calc( 100% + var(--g))}
+.gallery > img:nth-child(3),
+.gallery > img:nth-child(5) {--_y: calc(-75% - .87*var(--g))}
+.gallery > img:nth-child(4),
+.gallery > img:nth-child(6) {--_y: calc( 75% + .87*var(--g))}
+.gallery > img:nth-child(3),
+.gallery > img:nth-child(4) {--_x: calc(-50% - .5*var(--g))}
+.gallery > img:nth-child(5), 
+.gallery > img:nth-child(6) {--_x: calc( 50% + .5*var(--g))}
