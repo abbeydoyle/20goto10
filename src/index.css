@@ -95,3 +95,7 @@ html {
 body {
   @apply h-full;
 }
+
+.header {
+  height: center;
+}

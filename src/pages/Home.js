@@ -38,10 +38,10 @@ export default function Home() {
 
   return (
     <>
-    <div className="h-fit grid">
+    <div className="md:h-screen grid place-content-center">
       <pre>
         <h2
-          className="z-30 start-0 pb-[2%] pt-[5%]"
+          className="z-30 start-0 pb-[2%]"
           style={{ ...h4initialStyle, ...h4Style }}
         >
           {`// hello my name is`}
