@@ -2,6 +2,7 @@ import React from "react";
 
 export default function Songs() {
 
+
   const keysArr = [...document.querySelectorAll(".key")];
 
   const getKey = (event) => {
@@ -10,8 +11,10 @@ export default function Songs() {
     const element =
       document.querySelector(`[data-key="${parsedCode}"]`) ||
       document.querySelector(`[data-key="${parsedKey}"]`);
-  
+      console.log(element)
+
     return element;
+
   };
   
   document.addEventListener("keydown", (event) => {
@@ -51,6 +54,7 @@ export default function Songs() {
       event.target.classList.remove("active");
     }
   });
+  
   
   const animate = (element) => {
     const hueColor = Math.floor(Math.random() * (360 - 0 + 1)) + 0;
@@ -95,19 +99,25 @@ export default function Songs() {
   
     if (key) {
       animate(key);
+      console.log(key)
     }
   });
   
   document.addEventListener("click", (event) => {
     if (event.target.dataset.key) {
       animate(event.target);
+      console.log(event.target)
     }
   });
   
   window.addEventListener("load", () => {
     const key = document.querySelector(`[data-key="enter"]`);
     animate(key);
+    console.log(key)
   });
+
+
+  
   
   return (
     <>
