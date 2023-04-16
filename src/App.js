@@ -28,7 +28,7 @@ function App() {
                     <Route path="/artist" element={<Artist />} />
                   </Routes>
                 </div>
-                <ScrollToTop smooth component={<MySVG />} className="bg-transparent grid place-content-center" />
+                <ScrollToTop smooth component={<MySVG />} className="arrow grid place-content-center" />
                 <FooterApp />
                 </div>
           </Router>
