@@ -7,11 +7,13 @@ export default function Songs() {
 
   const getKey = (event) => {
     const parsedKey = event.key.toLowerCase().replace("\\", "\\\\");
+    console.log("parsedKey:", parsedKey)
     const parsedCode = event.code.toLowerCase();
+    console.log("parsedCode:", parsedCode)
     const element =
       document.querySelector(`[data-key="${parsedCode}"]`) ||
       document.querySelector(`[data-key="${parsedKey}"]`);
-      console.log(element)
+      console.log("element:", element)
 
     return element;
 
@@ -19,7 +21,9 @@ export default function Songs() {
   
   document.addEventListener("keydown", (event) => {
     const key = getKey(event);
+    
     if (key) {
+      console.log("key:", key)
       key.classList.add("active");
     }
   });
@@ -27,30 +31,35 @@ export default function Songs() {
   document.addEventListener("keyup", (event) => {
     const key = getKey(event);
     if (key) {
+      console.log("key:", key)
       key.classList.remove("active");
     }
   });
   
   document.addEventListener("mousedown", (event) => {
     if (event.target.dataset.key) {
+      console.log("event.target.dataset.key:", event.target.dataset.key)
       event.target.classList.add("active");
     }
   });
   
   document.addEventListener("mouseup", (event) => {
     if (event.target.dataset.key) {
+      console.log("event.target.dataset.key:", event.target.dataset.key)
       event.target.classList.remove("active");
     }
   });
   
   document.addEventListener("touchstart", (event) => {
     if (event.target.dataset.key) {
+      console.log("event.target.dataset.key:", event.target.dataset.key)
       event.target.classList.add("active");
     }
   });
   
   document.addEventListener("touchend", (event) => {
     if (event.target.dataset.key) {
+      console.log("event.target.dataset.key:", event.target.dataset.key)
       event.target.classList.remove("active");
     }
   });
@@ -99,21 +108,21 @@ export default function Songs() {
   
     if (key) {
       animate(key);
-      console.log(key)
+      console.log("key:", key)
     }
   });
   
   document.addEventListener("click", (event) => {
     if (event.target.dataset.key) {
       animate(event.target);
-      console.log(event.target)
+      console.log("event.target:", event.target)
     }
   });
   
   window.addEventListener("load", () => {
     const key = document.querySelector(`[data-key="enter"]`);
     animate(key);
-    console.log(key)
+    console.log("key:", key)
   });
 
 
