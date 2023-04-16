@@ -10,11 +10,11 @@ export default function MessageAlert({ setOpenMessageModal }) {
           className="fixed inset-0 w-full h-full bg-black opacity-70"
           onClick={() => setOpenMessageModal(false)}
         ></div>
-        <div className="flex items-center min-h-screen px-4 py-8">
+        <div className="flex items-center min-h-screen py-8">
           <div className="relative w-full max-w-lg p-4 mx-auto bg-white rounded-md shadow-lg">
             <button
               type="button"
-              class="text-[#b18363] bg-transparent hover:bg-[#d2b7a4] hover:text-[#78543b] rounded-lg text-sm p-1.5 ml-auto inline-flex items-center float-right"
+              class="text-[#503674] bg-transparent hover:bg-[#a371b1] hover:text-[#2e131c] rounded-lg text-sm p-1.5 ml-auto inline-flex items-center float-right"
               data-modal-hide="defaultModal"
               onClick={() => setOpenMessageModal(false)}
             >
@@ -33,18 +33,18 @@ export default function MessageAlert({ setOpenMessageModal }) {
               </svg>
               <span class="sr-only">Close modal</span>
             </button>
-            <div className="mt-3 mb-4 pl-8 sm:flex">
+            <div className="mt-3 mb-4 pl-3 sm:flex">
               <div className="mt-2 text-center sm:ml-[4rem] sm:text-left -ml-8">
-                <h4 className="text-xl font-medium text-[#573d2b] pb-4">
+                <h4 className="text-xl font-medium text-[#2e131c] pb-4">
                   Your message has been sent!
                 </h4>
-                <h5 className="text-lg font-small text-[#573d2b] pb-4">
-                  Thank you for your time
+                <h5 className="text-lg font-small text-[#2e131c] pb-4">
+                  I'll get back to you asap
                 </h5>
                 <div className="flex justify-around ">
                   <button
                     onClick={() => setOpenMessageModal(false)}
-                    className="mt-2 text-[15px] leading-relaxed text-[#78543b] hover:text-[#36261b] underline"
+                    className="mt-2 text-[15px] leading-relaxed text-[#503674] hover:text-[#2e131c] underline"
                   >
                     Back to site
                   </button>
