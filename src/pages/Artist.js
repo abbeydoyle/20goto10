@@ -224,7 +224,7 @@ export default function Artist() {
           </form>
         </div>
 
-        <div className="keyboardcontainer">
+        <div className="keyboardcontainer hidden md:table-cell">
           <div className="case mt-5">
             <div className="key" data-key="escape">
               esc
