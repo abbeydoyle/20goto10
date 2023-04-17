@@ -4,6 +4,8 @@ import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
 import { BsFillVolumeMuteFill, BsFillVolumeUpFill } from "react-icons/bs";
 import { AiFillFastBackward, AiFillFastForward } from "react-icons/ai";
+import {Howl, Howler} from 'howler';
+
 
 export default function Songs() {
   useEffect(() => {
@@ -268,9 +270,18 @@ export default function Songs() {
               spacing={2}
               divider={<Divider orientation="vertical" flexItem />}
             >
-              <div className="secondarymixbutton">button 1</div>
-              <div className="secondarymixbutton">button 2</div>
-              <div className="secondarymixbutton">button 3</div>
+              <div className="h-[5em] w-[10em] relative mixbutton" data-key="w">
+                stop
+                <div className="absolute bottom-1 right-1">w</div>
+                </div>
+              <div className="h-[5em] w-[10em] relative mixbutton" data-key="e">
+                pause
+                <div className="absolute bottom-1 right-1">e</div>
+                </div>
+              <div className="h-[5em] w-[10em] relative mixbutton" data-key="d">
+                play
+                <div className="absolute bottom-1 right-1">d</div>
+                </div>
             </Stack>
           </div>
           <div className="mixbuttoncontainer justify-center">
