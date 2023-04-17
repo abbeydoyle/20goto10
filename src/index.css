@@ -5,14 +5,13 @@
 @font-face {
   font-family: "Modeseven";
   src: local("Modeseven"),
-   url("./assets/fonts/Modeseven.ttf") format("truetype");
+    url("./assets/fonts/Modeseven.ttf") format("truetype");
   font-weight: normal;
-  }
-
+}
 
 pre {
   font-family: "Modeseven";
-  float:inline-start;
+  float: inline-start;
 }
 
 code {
@@ -25,7 +24,11 @@ body {
   line-height: 1.5;
   margin: 0;
   cursor: crosshair !important;
-  background-image: linear-gradient(120deg, rgba(233,158,243,1), rgba(94,188,226,1));
+  background-image: linear-gradient(
+    120deg,
+    rgba(233, 158, 243, 1),
+    rgba(94, 188, 226, 1)
+  );
   font-family: "Modeseven";
 }
 
@@ -35,16 +38,16 @@ body {
 
 * {
   font-family: "Modeseven";
-  cursor: crosshair !important
+  cursor: crosshair !important;
 }
 
 html {
-  cursor: crosshair !important
+  cursor: crosshair !important;
 }
 
 a:link {
   text-decoration: none;
-  cursor: crosshair !important
+  cursor: crosshair !important;
 }
 
 a:visited {
@@ -55,13 +58,18 @@ a:active {
   text-decoration: none;
 }
 
-.header, .footer {
+.header,
+.footer {
   background-color: transparent;
 }
 
 @media only screen and (min-width: 768px) {
   .header {
-    background-image: linear-gradient(120deg, rgba(94,188,226,1), rgba(233,158,243,1));
+    background-image: linear-gradient(
+      120deg,
+      rgba(94, 188, 226, 1),
+      rgba(233, 158, 243, 1)
+    );
     padding-top: 3rem;
     left: 50%;
     margin-left: -50vw;
@@ -80,7 +88,11 @@ a:active {
 }
 
 .footer {
-  background-image: linear-gradient(120deg, rgba(94,188,226,255), rgba(233,158,243,255));
+  background-image: linear-gradient(
+    120deg,
+    rgba(94, 188, 226, 255),
+    rgba(233, 158, 243, 255)
+  );
   left: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
@@ -114,79 +126,161 @@ body {
 }
 
 .keyboardcontainer {
+  display: table-cell;
+  margin: 0;
+  text-align: center;
+}
 
-    display: table-cell;
-    height: 100vh;
-    margin: 0;
-    text-align: center;
-    vertical-align: middle;
-    width: 100vw;
-  }
+.monitorcase {
+  /* background-color: rgb(74, 73, 73); */
+  background-image: radial-gradient(
+    rgb(74, 73, 73),
+    rgb(54, 54, 54)
+  );;
+  border-color: #2e2640;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 8px 10px 15px 10px;
+  height: auto;
+  padding: 5px;
+  user-select: none;
+  width: 60em;
+  color: #d0c3ec;
+}
+
+.case {
+  background-color: #463973;
+  border-color: #2e2640;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 8px 10px 15px 10px;
+  display: inline-grid;
+  grid-template-columns: repeat(36, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  height: 17em;
+  padding: 5px;
+  user-select: none;
+  width: 60em;
+}
+
+.key {
+  border-color: #382e59 #2e2640;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 3px 5px 8px 5px;
+  color: #bbadd9;
+  display: block;
+  font-family: sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  grid-column-end: span 2;
+  margin: 3px;
+  padding-top: 2px;
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 50ms ease-out;
+  will-change: box-shadow, color, text-shadow;
+}
+
+.key:empty::before {
+  content: attr(data-key);
+}
+
+.active {
+  transform: perspective(1200px) translateZ(-90px);
+}
+
+.medium {
+  grid-column-end: span 3;
+}
+
+.large {
+  grid-column-end: span 4;
+}
+
+.xl {
+  grid-column-end: span 5;
+}
+
+.xxl {
+  grid-column-end: span 6;
+}
+
+.xxxl {
+  grid-column-end: 7;
+}
+
+.huge {
+  grid-column-end: span 12;
+}
+
+/* 
+.monitorcase li {
+  overflow: hidden;
+  text-align: left;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0;
+  letter-spacing: .1em;
+}
+.monitorcase li:nth-child(1) {
+  animation: 
+    typing 6s steps(30, end),
+    blink-caret .75s step-end infinite;
+}
+.monitorcase li:nth-child(2) {
+  animation: 
+    typing2 6s steps(30, end),
+    blink-caret .75s step-end infinite;
+    animation-delay: 5s;
+}
+.monitorcase li:nth-child(3) {
+  animation: 
+    typing3 6s steps(30, end),
+    blink-caret .75s step-end infinite;
+    animation-delay: 10s;
+}
+.monitorcase li:nth-child(4) {
+  animation: 
+    typing4 6s steps(30, end),
+    blink-caret .75s step-end infinite;
+    animation-delay: 15s;
+}
+.monitorcase li:nth-child(5) {
+  animation: 
+    typing5 6s steps(30, end),
+    blink-caret .75s step-end infinite;
+    animation-delay: 20s;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes typing2 {
+  from { width: 0 }
+  to { width: 100% }
   
-  .case {
-    background-color: #463973;
-    border-color: #2e2640;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 8px 10px 15px 10px;
-    display: inline-grid;
-    grid-template-columns: repeat(36, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    height: 17em;
-    padding: 5px;
-    user-select: none;
-    width: 60em;
-  }
-  
-  .key {
-    border-color: #382e59 #2e2640;
-    border-radius: 2px;
-    border-style: solid;
-    border-width: 3px 5px 8px 5px;
-    color: #bbadd9;
-    display: block;
-    font-family: sans-serif;
-    font-size: 9px;
-    font-weight: 800;
-    grid-column-end: span 2;
-    margin: 3px;
-    padding-top: 2px;
-    padding: 5px;
-    text-align: center;
-    text-transform: uppercase;
-    transition: all 50ms ease-out;
-    will-change: box-shadow, color, text-shadow;
-  }
-  
-  .key:empty::before {
-    content: attr(data-key);
-  }
-  
-  .active {
-    transform: perspective(1200px) translateZ(-90px);
-  }
-  
-  .medium {
-    grid-column-end: span 3;
-  }
-  
-  .large {
-    grid-column-end: span 4;
-  }
-  
-  .xl {
-    grid-column-end: span 5;
-  }
-  
-  .xxl {
-    grid-column-end: span 6;
-  }
-  
-  .xxxl {
-    grid-column-end: 7;
-  }
-  
-  .huge {
-    grid-column-end: span 12;
-  }
-  
+}
+@keyframes typing3 {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes typing4 {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes typing5 {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
+.monitorcase li::before {
+  opacity: 0;
+} */
