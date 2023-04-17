@@ -209,3 +209,77 @@ body {
   user-select: none;
   color: #d0c3ec;
 }
+
+.mixercontainer {
+  display: table-cell;
+  margin: 0;
+  text-align: center;
+}
+
+.mixer {
+  background-color: #463973;
+  border-color: #2e2640;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 8px 10px 15px 10px;
+  display: inline-grid;
+  padding: 5px;
+  user-select: none;
+  width: min-content;
+}
+
+.mixbuttoncontainer {
+  display: inline-grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  padding: 5px;
+  user-select: none;
+  width: min-content;
+}
+
+.mixbutton {
+  border-color: #382e59 #2e2640;
+  width: 10em;
+  height: 10em;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 3px 5px 8px 5px;
+  color: #bbadd9;
+  display: block;
+  font-family: sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  grid-column-end: span 1;
+  margin: 8px;
+  padding-top: 2px;
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 50ms ease-out;
+  will-change: box-shadow, color, text-shadow;
+}
+.secondarymixbutton {
+  border-color: #382e59 #2e2640;
+  width: 10em;
+  height: 5em;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 3px 5px 8px 5px;
+  color: #bbadd9;
+  display: block;
+  font-family: sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  grid-column-end: span 1;
+  margin: 8px;
+  padding-top: 2px;
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 50ms ease-out;
+  will-change: box-shadow, color, text-shadow;
+}
+
+.key:empty::before {
+  content: attr(data-key);
+}

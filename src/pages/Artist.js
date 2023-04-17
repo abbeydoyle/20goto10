@@ -184,7 +184,7 @@ export default function Artist() {
   return (
     <>
       <div className="grid grid-row justify-items-center">
-        <div className="mt-[3%] monitorcase leading-8 relative md:w-[40em] w-full md:h-[21rem] h-[70%]">
+        <div className="mt-[3%] monitorcase leading-8 relative md:w-[40em] w-full md:h-[21rem] h-[100%]">
           <h1 className="text-3xl md:pb-0 pb-2">About me</h1>
           <h2>choose an option:</h2>
           <ol className="justify-self-start">
@@ -192,7 +192,7 @@ export default function Artist() {
               <Typewriter
                 onInit={(typewriter) => {
                   typewriter
-
+                  .pauseFor(1000)
                     .typeString("1. about - a small personal profile")
                     .pauseFor(2000)
                     .typeString(`<br/> 2. dog - a picture of my dog`)
