@@ -6,6 +6,10 @@ import { BsFillVolumeMuteFill, BsFillVolumeUpFill } from "react-icons/bs";
 import { AiFillFastBackward, AiFillFastForward } from "react-icons/ai";
 import {Howl, Howler} from 'howler';
 
+import NobinobiImport from "../assets/audio/Nobinobi.mp3"
+import HitomImport from "../assets/audio/Hitomebore.mp3"
+
+
 
 export default function Songs() {
   useEffect(() => {
@@ -20,6 +24,15 @@ export default function Songs() {
         document.querySelector(`[data-key="${parsedCode}"]`) ||
         document.querySelector(`[data-key="${parsedKey}"]`);
       console.log("element:", element);
+
+      if (parsedKey === "n") {
+        Howler.stop()
+        playNobinobi()
+      }
+      if (parsedKey === "h") {
+        Howler.stop()
+        playHitom()
+      }
 
       return element;
     };
@@ -131,6 +144,25 @@ export default function Songs() {
       console.log("key:", key);
     });
 
+    var Nobinobi = new Howl({
+      preload:true,
+      autoplay: false,
+      src: [NobinobiImport]
+    });
+  
+    const playNobinobi = () => {
+      Nobinobi.play()
+    }
+    var Hitom = new Howl({
+      preload: true,
+      autoplay: false,
+      src: [HitomImport]
+    });
+  
+    const playHitom = () => {
+      Hitom.play()
+    }
+
     return () => {  // cleanup
       document.removeEventListener("keydown", addActiveClassOnKeydown);
       document.removeEventListener("keyup", removeActiveClassOnKeyup);
@@ -145,6 +177,7 @@ export default function Songs() {
   function valuetext(value) {
     return `${value}%`;
   }
+
 
   return (
     <>
