@@ -197,7 +197,6 @@ body {
 
 
 .monitorcase {
-  /* background-color: rgb(74, 73, 73); */
   background-image: radial-gradient(
     rgb(74, 73, 73),
     rgb(54, 54, 54)
@@ -209,6 +208,5 @@ body {
   height: 21rem;
   padding: 5px;
   user-select: none;
-  width: 40em;
   color: #d0c3ec;
 }
