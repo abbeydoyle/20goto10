@@ -10,7 +10,7 @@ export default function Songs() {
     const keysArr = [...document.querySelectorAll(".mixbutton")];
 
     const getKey = (event) => {
-      const parsedKey = event.mixbutton.toLowerCase().replace("\\", "\\\\");
+      const parsedKey = event.key.toLowerCase().replace("\\", "\\\\");
       console.log("parsedKey:", parsedKey);
       const parsedCode = event.code.toLowerCase();
       console.log("parsedCode:", parsedCode);
@@ -138,15 +138,10 @@ export default function Songs() {
       document.removeEventListener("touchend", removeActiveClassOnTouchend);
     };
 
-
   }, []);
 
   function valuetext(value) {
     return `${value}%`;
-  }
-
-  const playAudio = () => {
-      
   }
 
   return (
@@ -323,7 +318,7 @@ export default function Songs() {
             Hitomebore <br /> 目惚れ
               <div className="absolute bottom-1 right-1">h</div>
             </div>
-            <div className="mixbutton relative" data-key="r" onClick={playAudio}>
+            <div className="mixbutton relative" data-key="r">
             Ryoko <br /> 旅行
               <div className="absolute bottom-1 right-1">r</div>
             </div>
