@@ -8,7 +8,18 @@ import {Howl, Howler} from 'howler';
 
 import NobinobiImport from "../assets/audio/Nobinobi.mp3"
 import HitomImport from "../assets/audio/Hitomebore.mp3"
-
+import ShitsurImport from "../assets/audio/Shitsuren.mp3"
+import KikaiImport from "../assets/audio/Kikai.mp3"
+import YoishioImport from "../assets/audio/Yoisho.mp3"
+import SutImport from "../assets/audio/Sutageiza.mp3"
+import KaikoImport from "../assets/audio/Kaikoshumi.mp3"
+import KoukaiInstImport from "../assets/audio/KoukaiInstrumental.mp3"
+import UkiyoImport from "../assets/audio/Ukiyo.mp3"
+import KyuImport from "../assets/audio/Kyusoku.mp3"
+import NozImport from "../assets/audio/Nozomi.mp3"
+import KepImport from "../assets/audio/Keppaku.mp3"
+import KoukImport from "../assets/audio/Koukai.mp3"
+import RyokoImport from "../assets/audio/Ryoko.mp3"
 
 
 export default function Songs() {
@@ -29,9 +40,67 @@ export default function Songs() {
         Howler.stop()
         playNobinobi()
       }
+      if (parsedKey === "s") {
+        Howler.stop()
+        playShitsur()
+      }
+      if (parsedKey === "k") {
+        Howler.stop()
+        playKikai()
+      }
+      if (parsedKey === "y") {
+        Howler.stop()
+        playYoishio()
+      }
+      if (parsedKey === "g") {
+        Howler.stop()
+        playSut()
+      }
+      if (parsedKey === "a") {
+        Howler.stop()
+        playKaiko()
+      }
+      if (parsedKey === "t") {
+        Howler.stop()
+        playKoukaiInst()
+      }
+      if (parsedKey === "u") {
+        Howler.stop()
+        playUkiyo()
+      }
       if (parsedKey === "h") {
         Howler.stop()
         playHitom()
+      }
+      if (parsedKey === "o") {
+        Howler.stop()
+        playKyu()
+      }
+      if (parsedKey === "z") {
+        Howler.stop()
+        playNoz()
+      }
+      if (parsedKey === "p") {
+        Howler.stop()
+        playKep()
+      }
+      if (parsedKey === "i") {
+        Howler.stop()
+        playKouk()
+      }
+      if (parsedKey === "r") {
+        Howler.stop()
+        playRyoko()
+      }
+      if (parsedKey === "w") {
+        Howler.stop()
+      }
+      if (parsedKey === "v") {
+        Howler.stop()
+      }
+      if (parsedKey === "x") {
+        Howler.stop()
+        playKouk()
       }
 
       return element;
@@ -57,7 +126,74 @@ export default function Songs() {
     // mouseclick events
     const addActiveClassOnMousedown = (event) => {
       if (event.target.dataset.key) {
+        console.log(event.target.dataset.key)
         event.target.classList.add("active");
+        if (event.target.dataset.key === "n") {
+          Howler.stop()
+          playNobinobi()
+        }
+        if (event.target.dataset.key === "s") {
+          Howler.stop()
+          playShitsur()
+        }
+        if (event.target.dataset.key === "k") {
+          Howler.stop()
+          playKikai()
+        }
+        if (event.target.dataset.key === "y") {
+          Howler.stop()
+          playYoishio()
+        }
+        if (event.target.dataset.key === "g") {
+          Howler.stop()
+          playSut()
+        }
+        if (event.target.dataset.key === "a") {
+          Howler.stop()
+          playKaiko()
+        }
+        if (event.target.dataset.key === "t") {
+          Howler.stop()
+          playKoukaiInst()
+        }
+        if (event.target.dataset.key === "u") {
+          Howler.stop()
+          playUkiyo()
+        }
+        if (event.target.dataset.key === "h") {
+          Howler.stop()
+          playHitom()
+        }
+        if (event.target.dataset.key === "o") {
+          Howler.stop()
+          playKyu()
+        }
+        if (event.target.dataset.key === "z") {
+          Howler.stop()
+          playNoz()
+        }
+        if (event.target.dataset.key === "p") {
+          Howler.stop()
+          playKep()
+        }
+        if (event.target.dataset.key === "i") {
+          Howler.stop()
+          playKouk()
+        }
+        if (event.target.dataset.key === "r") {
+          Howler.stop()
+          playRyoko()
+        }
+        if (event.target.dataset.key === "w") {
+          Howler.stop()
+        }
+        if (event.target.dataset.key === "v") {
+          Howler.stop()
+        }
+        if (event.target.dataset.key === "x") {
+          Howler.stop()
+          playKouk()
+        }
       }
     };
     document.addEventListener("mousedown", addActiveClassOnMousedown);
@@ -163,6 +299,121 @@ export default function Songs() {
       Hitom.play()
     }
 
+    var Shitsur = new Howl({
+      preload:true,
+      autoplay: false,
+      src: [ShitsurImport]
+    });
+  
+    const playShitsur = () => {
+      Shitsur.play()
+    }
+    var Kikai = new Howl({
+      preload: true,
+      autoplay: false,
+      src: [KikaiImport]
+    });
+  
+    const playKikai = () => {
+      Kikai.play()
+    }
+
+    var Yoishio = new Howl({
+      preload:true,
+      autoplay: false,
+      src: [YoishioImport]
+    });
+  
+    const playYoishio = () => {
+      Yoishio.play()
+    }
+    var Sut = new Howl({
+      preload: true,
+      autoplay: false,
+      src: [SutImport]
+    });
+  
+    const playSut = () => {
+      Sut.play()
+    }
+
+    var Kaiko = new Howl({
+      preload:true,
+      autoplay: false,
+      src: [KaikoImport]
+    });
+  
+    const playKaiko = () => {
+      Kaiko.play()
+    }
+    var KoukaiInst = new Howl({
+      preload: true,
+      autoplay: false,
+      src: [KoukaiInstImport]
+    });
+  
+    const playKoukaiInst = () => {
+      KoukaiInst.play()
+    }
+
+    var Ukiyo = new Howl({
+      preload:true,
+      autoplay: false,
+      src: [UkiyoImport]
+    });
+  
+    const playUkiyo = () => {
+      Ukiyo.play()
+    }
+    var Kyu = new Howl({
+      preload: true,
+      autoplay: false,
+      src: [KyuImport]
+    });
+  
+    const playKyu = () => {
+      Kyu.play()
+    }
+
+    var Noz = new Howl({
+      preload:true,
+      autoplay: false,
+      src: [NozImport]
+    });
+  
+    const playNoz = () => {
+      Noz.play()
+    }
+
+    var Kep = new Howl({
+      preload: true,
+      autoplay: false,
+      src: [KepImport]
+    });
+  
+    const playKep = () => {
+      Kep.play()
+    }
+
+    var Kouk = new Howl({
+      preload:true,
+      autoplay: false,
+      src: [KoukImport]
+    });
+  
+    const playKouk = () => {
+      Kouk.play()
+    }
+    var Ryoko = new Howl({
+      preload: true,
+      autoplay: false,
+      src: [RyokoImport]
+    });
+  
+    const playRyoko = () => {
+      Ryoko.play()
+    }
+
     return () => {  // cleanup
       document.removeEventListener("keydown", addActiveClassOnKeydown);
       document.removeEventListener("keyup", removeActiveClassOnKeyup);
@@ -181,6 +432,7 @@ export default function Songs() {
 
   return (
     <>
+    <h1 className="text-[#2e2640] z-50 text-3xl mt-5"></h1>
       <div className="mixercontainer">
         <div className="mixer mt-[10%] grid grid-flow-col auto-cols-2 gap-2">
           <div className="min-w-[20rem]">
@@ -307,13 +559,13 @@ export default function Songs() {
                 stop
                 <div className="absolute bottom-1 right-1">w</div>
                 </div>
-              <div className="h-[5em] w-[10em] relative mixbutton" data-key="e">
+              <div className="h-[5em] w-[10em] relative mixbutton" data-key="v">
                 pause
-                <div className="absolute bottom-1 right-1">e</div>
+                <div className="absolute bottom-1 right-1">v</div>
                 </div>
-              <div className="h-[5em] w-[10em] relative mixbutton" data-key="d">
+              <div className="h-[5em] w-[10em] relative mixbutton" data-key="x">
                 play
-                <div className="absolute bottom-1 right-1">d</div>
+                <div className="absolute bottom-1 right-1">x</div>
                 </div>
             </Stack>
           </div>
@@ -346,13 +598,13 @@ export default function Songs() {
             Kaikoshumi <br /> 懐古趣味
               <div className="absolute bottom-1 right-1">a</div>
             </div>
-            <div className="mixbutton relative" data-key="u">
-            Koukai <br /> 後悔
-              <div className="absolute bottom-1 right-1">u</div>
-            </div>
             <div className="mixbutton relative" data-key="i">
-            Koukai <br /> Instrumental <br />後悔
+            Koukai <br /> 後悔
               <div className="absolute bottom-1 right-1">i</div>
+            </div>
+            <div className="mixbutton relative" data-key="t">
+            Koukai <br /> Instrumental <br />後悔
+              <div className="absolute bottom-1 right-1">t</div>
             </div>
             <div className="mixbutton relative" data-key="u">
             Ukiyo <br /> 浮世

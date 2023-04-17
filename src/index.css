@@ -212,7 +212,8 @@ body {
 
 .mixercontainer {
   display: table-cell;
-  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }
 
@@ -241,27 +242,6 @@ body {
   border-color: #382e59 #2e2640;
   width: 10em;
   height: 10em;
-  border-radius: 2px;
-  border-style: solid;
-  border-width: 3px 5px 8px 5px;
-  color: #bbadd9;
-  display: block;
-  font-family: sans-serif;
-  font-size: 9px;
-  font-weight: 800;
-  grid-column-end: span 1;
-  margin: 8px;
-  padding-top: 2px;
-  padding: 5px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: all 50ms ease-out;
-  will-change: box-shadow, color, text-shadow;
-}
-.secondarymixbutton {
-  border-color: #382e59 #2e2640;
-  width: 10em;
-  height: 5em;
   border-radius: 2px;
   border-style: solid;
   border-width: 3px 5px 8px 5px;
