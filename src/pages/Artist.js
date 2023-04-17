@@ -184,7 +184,7 @@ export default function Artist() {
   return (
     <>
       <div className="grid grid-row justify-items-center">
-        <div className="mt-[5%] monitorcase leading-8">
+        <div className="mt-[3%] monitorcase leading-8 relative">
           <h1 className="text-3xl">About me</h1>
           <h2>choose an option:</h2>
           <ol className="justify-self-start">
@@ -207,7 +207,7 @@ export default function Artist() {
               />
             </li>
           </ol>
-          <form>
+          <form className="absolute bottom-2 left-2">
             <p>Type your command here:</p>
             <input
               className="border-solid border-2 border-black bg-transparent"
