@@ -184,8 +184,8 @@ export default function Artist() {
   return (
     <>
       <div className="grid grid-row justify-items-center">
-        <div className="mt-[3%] monitorcase leading-8 relative md:w-[40em] w-full">
-          <h1 className="text-3xl">About me</h1>
+        <div className="mt-[3%] monitorcase leading-8 relative md:w-[40em] w-full md:h-[21rem] h-[70%]">
+          <h1 className="text-3xl md:pb-0 pb-2">About me</h1>
           <h2>choose an option:</h2>
           <ol className="justify-self-start">
             <li className="justify-self-start">
