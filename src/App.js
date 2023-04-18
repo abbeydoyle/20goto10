@@ -2,7 +2,6 @@ import React from "react";
 import "./app.css";
 import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import About from "./pages/About.js";
 import Contact from "./pages/Contact.js";
 import Header from "./components/Header.js";
 import FooterApp from "./components/Footer.js";
@@ -23,7 +22,6 @@ function App() {
                   <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/contact" element={<Contact />} />
-                    <Route path="/about" element={<About />} />
                     <Route path="/songs" element={<Songs />} />
                     <Route path="/artist" element={<Artist />} />
                   </Routes>

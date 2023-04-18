@@ -218,8 +218,8 @@ body {
 }
 
 .mixer {
-  background-color: #463973;
-  border-color: #2e2640;
+  background-color: #3E3855;
+  border-color: #393740;
   border-radius: 5px;
   border-style: solid;
   border-width: 8px 10px 15px 10px;
@@ -239,13 +239,14 @@ body {
 }
 
 .mixbutton {
-  border-color: #382e59 #2e2640;
+  /* border-color: #382e59 #2e2640; */
   width: 10em;
   height: 10em;
   border-radius: 2px;
   border-style: solid;
   border-width: 3px 5px 8px 5px;
-  color: #bbadd9;
+  /* color: #bbadd9; */
+  color: black;
   display: block;
   font-family: sans-serif;
   font-size: 9px;
@@ -262,4 +263,44 @@ body {
 
 .key:empty::before {
   content: attr(data-key);
+}
+
+.blue {
+  background-image: radial-gradient(
+    #b9e7ff,
+    #a4d4ee
+  );
+  border-color: #86B6D0 #6898B2
+}
+
+.green {
+  background-image: radial-gradient(
+    #c5fa88,
+    #a6da6b
+  );
+  border-color: #88BC4D #6A9E2F
+}
+
+.yellow {
+  background-image: radial-gradient(
+    #ffeab6,
+    #fde095
+  );
+  border-color: #C1A459 #DFC277
+}
+
+.pink {
+  background-image: radial-gradient(
+    #ffb4f8,
+    #d98ed2
+  );
+  border-color: #9D5296 #BB70B4
+}
+
+.extra {
+  background-image: radial-gradient(
+    #5a4b79,
+    #4e416a
+  );
+  border-color: #382e59 #2e2640;
 }

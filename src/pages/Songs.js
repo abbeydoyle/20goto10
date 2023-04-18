@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "@mui/material/Slider";
 import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
@@ -20,6 +20,7 @@ import NozImport from "../assets/audio/Nozomi.mp3"
 import KepImport from "../assets/audio/Keppaku.mp3"
 import KoukImport from "../assets/audio/Koukai.mp3"
 import RyokoImport from "../assets/audio/Ryoko.mp3"
+
 
 
 export default function Songs() {
@@ -425,6 +426,11 @@ export default function Songs() {
 
   }, []);
 
+  const [value, setValue] = useState([])
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+    Howler.volume(value*0.01)
+  };
   function valuetext(value) {
     return `${value}%`;
   }
@@ -436,7 +442,7 @@ export default function Songs() {
       <div className="mixercontainer">
         <div className="mixer mt-[10%] grid grid-flow-col auto-cols-2 gap-2">
           <div className="min-w-[20rem]">
-            <h1 className="pb-2 pt-2 text-xl">mixboard v20goto10</h1>
+            <h1 className="pb-2 pt-2 tracking-widest text-xl">mixboard v20goto10</h1>
             <Stack
               className="h-[75%] pt-2 pb-2 flex justify-evenly"
               direction="row"
@@ -450,6 +456,7 @@ export default function Songs() {
                   orientation="vertical"
                   defaultValue={30}
                   getAriaValueText={valuetext}
+                  onChange={handleChange}
                   step={10}
                   marks
                   min={0}
@@ -555,82 +562,82 @@ export default function Songs() {
               spacing={2}
               divider={<Divider orientation="vertical" flexItem />}
             >
-              <div className="h-[5em] w-[10em] relative mixbutton" data-key="w">
+              <div className="h-[5em] w-[10em] relative mixbutton extra" data-key="w">
                 stop
                 <div className="absolute bottom-1 right-1">w</div>
                 </div>
-              <div className="h-[5em] w-[10em] relative mixbutton" data-key="v">
+              <div className="h-[5em] w-[10em] relative mixbutton extra" data-key="v">
                 pause
                 <div className="absolute bottom-1 right-1">v</div>
                 </div>
-              <div className="h-[5em] w-[10em] relative mixbutton" data-key="x">
+              <div className="h-[5em] w-[10em] relative mixbutton extra" data-key="x">
                 play
                 <div className="absolute bottom-1 right-1">x</div>
                 </div>
             </Stack>
           </div>
           <div className="mixbuttoncontainer justify-center">
-            <div className="mixbutton relative" data-key="n">
+            <div className="mixbutton relative blue rounded-lg" data-key="n">
               Nobinobi <br /> 伸び伸び
               <div className="absolute bottom-1 right-1">n</div>
             </div>
-            <div className="mixbutton relative" data-key="s">
+            <div className="mixbutton relative green rounded-lg" data-key="s">
             Shitsuren <br /> 失恋
               <div className="absolute bottom-1 right-1">s</div>
             </div>
-            <div className="mixbutton relative" data-key="k">
+            <div className="mixbutton relative yellow rounded-lg" data-key="k">
             Kikai <br /> 機械
               <div className="absolute bottom-1 right-1">k</div>
             </div>
-            <div className="mixbutton relative" data-key="p">
+            <div className="mixbutton relative pink rounded-lg" data-key="p">
             Keppaku <br /> 潔白
               <div className="absolute bottom-1 right-1">p</div>
             </div>
-            <div className="mixbutton relative" data-key="y">
+            <div className="mixbutton relative yellow rounded-lg" data-key="y">
             Yoisho <br /> よいしょ
               <div className="absolute bottom-1 right-1">y</div>
             </div>
-            <div className="mixbutton relative" data-key="g">
+            <div className="mixbutton relative pink rounded-lg" data-key="g">
             Sutageiza <br /> スターゲイザー
               <div className="absolute bottom-1 right-1">g</div>
             </div>
-            <div className="mixbutton relative" data-key="a">
+            <div className="mixbutton relative blue rounded-lg" data-key="a">
             Kaikoshumi <br /> 懐古趣味
               <div className="absolute bottom-1 right-1">a</div>
             </div>
-            <div className="mixbutton relative" data-key="i">
+            <div className="mixbutton relative green rounded-lg" data-key="i">
             Koukai <br /> 後悔
               <div className="absolute bottom-1 right-1">i</div>
             </div>
-            <div className="mixbutton relative" data-key="t">
+            <div className="mixbutton relative green rounded-lg" data-key="t">
             Koukai <br /> Instrumental <br />後悔
               <div className="absolute bottom-1 right-1">t</div>
             </div>
-            <div className="mixbutton relative" data-key="u">
+            <div className="mixbutton relative yellow rounded-lg" data-key="u">
             Ukiyo <br /> 浮世
               <div className="absolute bottom-1 right-1">u</div>
             </div>
-            <div className="mixbutton relative" data-key="h">
+            <div className="mixbutton relative pink rounded-lg" data-key="h">
             Hitomebore <br /> 目惚れ
               <div className="absolute bottom-1 right-1">h</div>
             </div>
-            <div className="mixbutton relative" data-key="r">
+            <div className="mixbutton relative blue rounded-lg" data-key="r">
             Ryoko <br /> 旅行
               <div className="absolute bottom-1 right-1">r</div>
             </div>
-            <div className="mixbutton relative" data-key="o">
+            <div className="mixbutton relative pink rounded-lg" data-key="o">
             Kyusoku <br /> 休息
               <div className="absolute bottom-1 right-1">o</div>
             </div>
-            <div className="mixbutton relative" data-key="z">
+            <div className="mixbutton relative blue rounded-lg" data-key="z">
             Nozomi <br /> 希
               <div className="absolute bottom-1 right-1">z</div>
             </div>
-            <div className="mixbutton relative" data-key="e">
+            <div className="mixbutton relative green rounded-lg" data-key="e">
               Unreleased <br /> 未発表
               <div className="absolute bottom-1 right-1">e</div>
             </div>
-            <div className="mixbutton relative" data-key="d">
+            <div className="mixbutton relative yellow rounded-lg" data-key="d">
               Unreleased <br /> 未発表
               <div className="absolute bottom-1 right-1">d</div>
             </div>

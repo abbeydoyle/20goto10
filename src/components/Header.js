@@ -19,14 +19,14 @@ function Header() {
       <Navbar.Brand href="/">
         <img src={logo} className="mr-3 h-6 sm:h-9" alt="Logo" />
         <span className="">
-          20goto10 家
+          20goto10
         </span>
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse>
-        <Navbar.Link href="/about">
+        <Navbar.Link href="/">
           <span className="">
-            About 約
+            Home 家
           </span>
         </Navbar.Link>
         <Navbar.Link href="/songs">
