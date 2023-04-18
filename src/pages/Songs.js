@@ -432,7 +432,7 @@ export default function Songs() {
 
   return (
     <>
-    <h1 className="text-[#2e2640] z-50 text-3xl mt-5"></h1>
+    <h1 className="text-[#2e2640] z-50 text-3xl pt-5 mt-5 text-center">My Music</h1>
       <div className="mixercontainer">
         <div className="mixer mt-[10%] grid grid-flow-col auto-cols-2 gap-2">
           <div className="min-w-[20rem]">
