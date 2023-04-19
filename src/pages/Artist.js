@@ -194,13 +194,13 @@ export default function Artist() {
                   typewriter
                   .pauseFor(1000)
                     .typeString("1. about - a small personal profile")
-                    .pauseFor(2000)
+                    .pauseFor(1000)
                     .typeString(`<br/> 2. dog - a picture of my dog`)
-                    .pauseFor(2000)
+                    .pauseFor(1000)
                     .typeString(`<br/> 3. ssn - my social security number`)
-                    .pauseFor(2000)
+                    .pauseFor(1000)
                     .typeString(`<br/> 4. phoneno - my phone number ;)`)
-                    .pauseFor(2000)
+                    .pauseFor(1000)
                     .typeString(`<br/> 5. ls - a list of commands`)
                     .start();
                 }}

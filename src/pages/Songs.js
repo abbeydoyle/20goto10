@@ -4,24 +4,22 @@ import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
 import { BsFillVolumeMuteFill, BsFillVolumeUpFill } from "react-icons/bs";
 import { AiFillFastBackward, AiFillFastForward } from "react-icons/ai";
-import {Howl, Howler} from 'howler';
+import { Howl, Howler } from "howler";
 
-import NobinobiImport from "../assets/audio/Nobinobi.mp3"
-import HitomImport from "../assets/audio/Hitomebore.mp3"
-import ShitsurImport from "../assets/audio/Shitsuren.mp3"
-import KikaiImport from "../assets/audio/Kikai.mp3"
-import YoishioImport from "../assets/audio/Yoisho.mp3"
-import SutImport from "../assets/audio/Sutageiza.mp3"
-import KaikoImport from "../assets/audio/Kaikoshumi.mp3"
-import KoukaiInstImport from "../assets/audio/KoukaiInstrumental.mp3"
-import UkiyoImport from "../assets/audio/Ukiyo.mp3"
-import KyuImport from "../assets/audio/Kyusoku.mp3"
-import NozImport from "../assets/audio/Nozomi.mp3"
-import KepImport from "../assets/audio/Keppaku.mp3"
-import KoukImport from "../assets/audio/Koukai.mp3"
-import RyokoImport from "../assets/audio/Ryoko.mp3"
-
-
+import NobinobiImport from "../assets/audio/Nobinobi.mp3";
+import HitomImport from "../assets/audio/Hitomebore.mp3";
+import ShitsurImport from "../assets/audio/Shitsuren.mp3";
+import KikaiImport from "../assets/audio/Kikai.mp3";
+import YoishioImport from "../assets/audio/Yoisho.mp3";
+import SutImport from "../assets/audio/Sutageiza.mp3";
+import KaikoImport from "../assets/audio/Kaikoshumi.mp3";
+import KoukaiInstImport from "../assets/audio/KoukaiInstrumental.mp3";
+import UkiyoImport from "../assets/audio/Ukiyo.mp3";
+import KyuImport from "../assets/audio/Kyusoku.mp3";
+import NozImport from "../assets/audio/Nozomi.mp3";
+import KepImport from "../assets/audio/Keppaku.mp3";
+import KoukImport from "../assets/audio/Koukai.mp3";
+import RyokoImport from "../assets/audio/Ryoko.mp3";
 
 export default function Songs() {
   useEffect(() => {
@@ -38,70 +36,70 @@ export default function Songs() {
       console.log("element:", element);
 
       if (parsedKey === "n") {
-        Howler.stop()
-        playNobinobi()
+        Howler.stop();
+        playNobinobi();
       }
       if (parsedKey === "s") {
-        Howler.stop()
-        playShitsur()
+        Howler.stop();
+        playShitsur();
       }
       if (parsedKey === "k") {
-        Howler.stop()
-        playKikai()
+        Howler.stop();
+        playKikai();
       }
       if (parsedKey === "y") {
-        Howler.stop()
-        playYoishio()
+        Howler.stop();
+        playYoishio();
       }
       if (parsedKey === "g") {
-        Howler.stop()
-        playSut()
+        Howler.stop();
+        playSut();
       }
       if (parsedKey === "a") {
-        Howler.stop()
-        playKaiko()
+        Howler.stop();
+        playKaiko();
       }
       if (parsedKey === "t") {
-        Howler.stop()
-        playKoukaiInst()
+        Howler.stop();
+        playKoukaiInst();
       }
       if (parsedKey === "u") {
-        Howler.stop()
-        playUkiyo()
+        Howler.stop();
+        playUkiyo();
       }
       if (parsedKey === "h") {
-        Howler.stop()
-        playHitom()
+        Howler.stop();
+        playHitom();
       }
       if (parsedKey === "o") {
-        Howler.stop()
-        playKyu()
+        Howler.stop();
+        playKyu();
       }
       if (parsedKey === "z") {
-        Howler.stop()
-        playNoz()
+        Howler.stop();
+        playNoz();
       }
       if (parsedKey === "p") {
-        Howler.stop()
-        playKep()
+        Howler.stop();
+        playKep();
       }
       if (parsedKey === "i") {
-        Howler.stop()
-        playKouk()
+        Howler.stop();
+        playKouk();
       }
       if (parsedKey === "r") {
-        Howler.stop()
-        playRyoko()
+        Howler.stop();
+        playRyoko();
       }
       if (parsedKey === "w") {
-        Howler.stop()
+        Howler.stop();
       }
       if (parsedKey === "v") {
-        Howler.stop()
+        Howler.stop();
       }
       if (parsedKey === "x") {
-        Howler.stop()
-        playKouk()
+        Howler.stop();
+        playKouk();
       }
 
       return element;
@@ -127,73 +125,73 @@ export default function Songs() {
     // mouseclick events
     const addActiveClassOnMousedown = (event) => {
       if (event.target.dataset.key) {
-        console.log(event.target.dataset.key)
+        console.log(event.target.dataset.key);
         event.target.classList.add("active");
         if (event.target.dataset.key === "n") {
-          Howler.stop()
-          playNobinobi()
+          Howler.stop();
+          playNobinobi();
         }
         if (event.target.dataset.key === "s") {
-          Howler.stop()
-          playShitsur()
+          Howler.stop();
+          playShitsur();
         }
         if (event.target.dataset.key === "k") {
-          Howler.stop()
-          playKikai()
+          Howler.stop();
+          playKikai();
         }
         if (event.target.dataset.key === "y") {
-          Howler.stop()
-          playYoishio()
+          Howler.stop();
+          playYoishio();
         }
         if (event.target.dataset.key === "g") {
-          Howler.stop()
-          playSut()
+          Howler.stop();
+          playSut();
         }
         if (event.target.dataset.key === "a") {
-          Howler.stop()
-          playKaiko()
+          Howler.stop();
+          playKaiko();
         }
         if (event.target.dataset.key === "t") {
-          Howler.stop()
-          playKoukaiInst()
+          Howler.stop();
+          playKoukaiInst();
         }
         if (event.target.dataset.key === "u") {
-          Howler.stop()
-          playUkiyo()
+          Howler.stop();
+          playUkiyo();
         }
         if (event.target.dataset.key === "h") {
-          Howler.stop()
-          playHitom()
+          Howler.stop();
+          playHitom();
         }
         if (event.target.dataset.key === "o") {
-          Howler.stop()
-          playKyu()
+          Howler.stop();
+          playKyu();
         }
         if (event.target.dataset.key === "z") {
-          Howler.stop()
-          playNoz()
+          Howler.stop();
+          playNoz();
         }
         if (event.target.dataset.key === "p") {
-          Howler.stop()
-          playKep()
+          Howler.stop();
+          playKep();
         }
         if (event.target.dataset.key === "i") {
-          Howler.stop()
-          playKouk()
+          Howler.stop();
+          playKouk();
         }
         if (event.target.dataset.key === "r") {
-          Howler.stop()
-          playRyoko()
+          Howler.stop();
+          playRyoko();
         }
         if (event.target.dataset.key === "w") {
-          Howler.stop()
+          Howler.stop();
         }
         if (event.target.dataset.key === "v") {
-          Howler.stop()
+          Howler.stop();
         }
         if (event.target.dataset.key === "x") {
-          Howler.stop()
-          playKouk()
+          Howler.stop();
+          playKouk();
         }
       }
     };
@@ -282,140 +280,141 @@ export default function Songs() {
     });
 
     var Nobinobi = new Howl({
-      preload:true,
+      preload: true,
       autoplay: false,
-      src: [NobinobiImport]
+      src: [NobinobiImport],
     });
-  
+
     const playNobinobi = () => {
-      Nobinobi.play()
-    }
+      Nobinobi.play();
+    };
     var Hitom = new Howl({
       preload: true,
       autoplay: false,
-      src: [HitomImport]
+      src: [HitomImport],
     });
-  
+
     const playHitom = () => {
-      Hitom.play()
-    }
+      Hitom.play();
+    };
 
     var Shitsur = new Howl({
-      preload:true,
+      preload: true,
       autoplay: false,
-      src: [ShitsurImport]
+      src: [ShitsurImport],
     });
-  
+
     const playShitsur = () => {
-      Shitsur.play()
-    }
+      Shitsur.play();
+    };
     var Kikai = new Howl({
       preload: true,
       autoplay: false,
-      src: [KikaiImport]
+      src: [KikaiImport],
     });
-  
+
     const playKikai = () => {
-      Kikai.play()
-    }
+      Kikai.play();
+    };
 
     var Yoishio = new Howl({
-      preload:true,
+      preload: true,
       autoplay: false,
-      src: [YoishioImport]
+      src: [YoishioImport],
     });
-  
+
     const playYoishio = () => {
-      Yoishio.play()
-    }
+      Yoishio.play();
+    };
     var Sut = new Howl({
       preload: true,
       autoplay: false,
-      src: [SutImport]
+      src: [SutImport],
     });
-  
+
     const playSut = () => {
-      Sut.play()
-    }
+      Sut.play();
+    };
 
     var Kaiko = new Howl({
-      preload:true,
+      preload: true,
       autoplay: false,
-      src: [KaikoImport]
+      src: [KaikoImport],
     });
-  
+
     const playKaiko = () => {
-      Kaiko.play()
-    }
+      Kaiko.play();
+    };
     var KoukaiInst = new Howl({
       preload: true,
       autoplay: false,
-      src: [KoukaiInstImport]
+      src: [KoukaiInstImport],
     });
-  
+
     const playKoukaiInst = () => {
-      KoukaiInst.play()
-    }
+      KoukaiInst.play();
+    };
 
     var Ukiyo = new Howl({
-      preload:true,
+      preload: true,
       autoplay: false,
-      src: [UkiyoImport]
+      src: [UkiyoImport],
     });
-  
+
     const playUkiyo = () => {
-      Ukiyo.play()
-    }
+      Ukiyo.play();
+    };
     var Kyu = new Howl({
       preload: true,
       autoplay: false,
-      src: [KyuImport]
+      src: [KyuImport],
     });
-  
+
     const playKyu = () => {
-      Kyu.play()
-    }
+      Kyu.play();
+    };
 
     var Noz = new Howl({
-      preload:true,
+      preload: true,
       autoplay: false,
-      src: [NozImport]
+      src: [NozImport],
     });
-  
+
     const playNoz = () => {
-      Noz.play()
-    }
+      Noz.play();
+    };
 
     var Kep = new Howl({
       preload: true,
       autoplay: false,
-      src: [KepImport]
+      src: [KepImport],
     });
-  
+
     const playKep = () => {
-      Kep.play()
-    }
+      Kep.play();
+    };
 
     var Kouk = new Howl({
-      preload:true,
+      preload: true,
       autoplay: false,
-      src: [KoukImport]
+      src: [KoukImport],
     });
-  
+
     const playKouk = () => {
-      Kouk.play()
-    }
+      Kouk.play();
+    };
     var Ryoko = new Howl({
       preload: true,
       autoplay: false,
-      src: [RyokoImport]
+      src: [RyokoImport],
     });
-  
-    const playRyoko = () => {
-      Ryoko.play()
-    }
 
-    return () => {  // cleanup
+    const playRyoko = () => {
+      Ryoko.play();
+    };
+
+    return () => {
+      // cleanup
       document.removeEventListener("keydown", addActiveClassOnKeydown);
       document.removeEventListener("keyup", removeActiveClassOnKeyup);
       document.removeEventListener("mousedown", addActiveClassOnMousedown);
@@ -423,225 +422,271 @@ export default function Songs() {
       document.removeEventListener("touchstart", addActiveClassOnTouchstart);
       document.removeEventListener("touchend", removeActiveClassOnTouchend);
     };
-
   }, []);
 
-  const [value, setValue] = useState([])
+  const [value, setValue] = useState([]);
   const handleChange = (event, newValue) => {
     setValue(newValue);
-    Howler.volume(value*0.01)
+    Howler.volume(value * 0.01);
   };
   function valuetext(value) {
     return `${value}%`;
   }
 
-
   return (
     <>
-    <h1 className="text-[#2e2640] z-50 text-3xl pt-5 mt-5 text-center">My Music</h1>
-      <div className="mixercontainer">
-        <div className="mixer mt-[10%] grid grid-flow-col auto-cols-2 gap-2">
-          <div className="min-w-[20rem]">
-            <h1 className="pb-2 pt-2 tracking-widest text-xl">mixboard v20goto10</h1>
-            <Stack
-              className="h-[75%] pt-2 pb-2 flex justify-evenly"
-              direction="row"
-              spacing={2}
-              divider={<Divider orientation="vertical" flexItem />}
-            >
-              <Stack justifyContent="center" alignItems="center">
-                <BsFillVolumeUpFill className="h-8 w-8 text-center" />
-                <Slider
-                  aria-label="volume"
-                  orientation="vertical"
-                  defaultValue={30}
-                  getAriaValueText={valuetext}
-                  onChange={handleChange}
-                  step={10}
-                  marks
-                  min={0}
-                  max={100}
-                  valueLabelDisplay="auto"
-                  sx={{
-                    "& .MuiSlider-track": {
-                      width: 20,
-                      color: "#2e2640",
-                    },
-                    "& .MuiSlider-thumb": {
-                      width: 60,
-                      height: 20,
-                      color: "#2e2640",
-                    },
-                    "& .MuiSlider-rail": {
-                      width: 20,
-                      color: "#2e2640",
-                    },
-                    "& .MuiSlider-mark": {
-                      color: "#bbadd9",
-                    },
-                    "& .Mui-focusVisible": {
-                      color: "none",
-                    },
-                    "& .MuiSlider-valueLabel": {
-                      color: "#bbadd9",
-                      backgroundColor: "#2e2640",
-                    },
-                    "& .MuiSlider-thumb:hover": {
-                      boxShadow: "none  !important",
-                      outline: "none  !important",
-                    },
-                    "& .MuiSlider-thumb:active": {
-                      boxShadow: "none  !important",
-                      outline: "none  !important",
-                    },
-                    "& .MuiSlider-thumb:focus": {
-                      boxShadow: "none  !important",
-                      outline: "none  !important",
-                    },
-                  }}
-                />
-                <BsFillVolumeMuteFill className="h-8 w-8 text-center" />
+    <h1 className="text-[#2e2640] z-50 text-3xl pt-5 mt-5 text-center">
+          /* My Music */
+        </h1>
+      <div className="grid grid-cols-3 ml-[-5%]">
+        <div className="mixercontainer w-70% col-span-2">
+          <div className="mixer mt-[5%] grid grid-flow-col auto-cols-2 gap-2">
+            <div className="min-w-[20rem]">
+              <h1 className="pb-2 pt-2 tracking-widest text-xl">
+                mixboard v20goto10
+              </h1>
+              <Stack
+                className="h-[75%] pt-2 pb-2 flex justify-evenly"
+                direction="row"
+                spacing={2}
+                divider={<Divider orientation="vertical" flexItem />}
+              >
+                <Stack justifyContent="center" alignItems="center">
+                  <BsFillVolumeUpFill className="h-8 w-8 text-center" />
+                  <Slider
+                    aria-label="volume"
+                    orientation="vertical"
+                    defaultValue={30}
+                    getAriaValueText={valuetext}
+                    onChange={handleChange}
+                    step={10}
+                    marks
+                    min={0}
+                    max={100}
+                    valueLabelDisplay="auto"
+                    sx={{
+                      "& .MuiSlider-track": {
+                        width: 20,
+                        color: "#2e2640",
+                      },
+                      "& .MuiSlider-thumb": {
+                        width: 60,
+                        height: 20,
+                        color: "#2e2640",
+                      },
+                      "& .MuiSlider-rail": {
+                        width: 20,
+                        color: "#2e2640",
+                      },
+                      "& .MuiSlider-mark": {
+                        color: "#bbadd9",
+                      },
+                      "& .Mui-focusVisible": {
+                        color: "none",
+                      },
+                      "& .MuiSlider-valueLabel": {
+                        color: "#bbadd9",
+                        backgroundColor: "#2e2640",
+                      },
+                      "& .MuiSlider-thumb:hover": {
+                        boxShadow: "none  !important",
+                        outline: "none  !important",
+                      },
+                      "& .MuiSlider-thumb:active": {
+                        boxShadow: "none  !important",
+                        outline: "none  !important",
+                      },
+                      "& .MuiSlider-thumb:focus": {
+                        boxShadow: "none  !important",
+                        outline: "none  !important",
+                      },
+                    }}
+                  />
+                  <BsFillVolumeMuteFill className="h-8 w-8 text-center" />
+                </Stack>
+                <Stack justifyContent="center" alignItems="center">
+                  <AiFillFastForward className="h-8 w-8 text-center" />
+                  <Slider
+                    aria-label="speed"
+                    orientation="vertical"
+                    defaultValue={100}
+                    getAriaValueText={valuetext}
+                    step={10}
+                    marks
+                    min={50}
+                    max={150}
+                    valueLabelDisplay="auto"
+                    sx={{
+                      "& .MuiSlider-track": {
+                        width: 20,
+                        color: "#2e2640",
+                      },
+                      "& .MuiSlider-thumb": {
+                        width: 60,
+                        height: 20,
+                        color: "#2e2640",
+                      },
+                      "& .MuiSlider-rail": {
+                        width: 20,
+                        color: "#2e2640",
+                      },
+                      "& .MuiSlider-mark": {
+                        color: "#bbadd9",
+                      },
+                      "& .Mui-focusVisible": {
+                        color: "none",
+                      },
+                      "& .MuiSlider-valueLabel": {
+                        color: "#bbadd9",
+                        backgroundColor: "#2e2640",
+                      },
+                      "& .MuiSlider-thumb:hover": {
+                        boxShadow: "none  !important",
+                        outline: "none  !important",
+                      },
+                      "& .MuiSlider-thumb:active": {
+                        boxShadow: "none  !important",
+                        outline: "none  !important",
+                      },
+                      "& .MuiSlider-thumb:focus": {
+                        boxShadow: "none  !important",
+                        outline: "none  !important",
+                      },
+                    }}
+                  />
+                  <AiFillFastBackward className="h-8 w-8 text-center" />
+                </Stack>
               </Stack>
-              <Stack justifyContent="center" alignItems="center">
-                <AiFillFastForward className="h-8 w-8 text-center" />
-                <Slider
-                  aria-label="speed"
-                  orientation="vertical"
-                  defaultValue={100}
-                  getAriaValueText={valuetext}
-                  step={10}
-                  marks
-                  min={50}
-                  max={150}
-                  valueLabelDisplay="auto"
-                  sx={{
-                    "& .MuiSlider-track": {
-                      width: 20,
-                      color: "#2e2640",
-                    },
-                    "& .MuiSlider-thumb": {
-                      width: 60,
-                      height: 20,
-                      color: "#2e2640",
-                    },
-                    "& .MuiSlider-rail": {
-                      width: 20,
-                      color: "#2e2640",
-                    },
-                    "& .MuiSlider-mark": {
-                      color: "#bbadd9",
-                    },
-                    "& .Mui-focusVisible": {
-                      color: "none",
-                    },
-                    "& .MuiSlider-valueLabel": {
-                      color: "#bbadd9",
-                      backgroundColor: "#2e2640",
-                    },
-                    "& .MuiSlider-thumb:hover": {
-                      boxShadow: "none  !important",
-                      outline: "none  !important",
-                    },
-                    "& .MuiSlider-thumb:active": {
-                      boxShadow: "none  !important",
-                      outline: "none  !important",
-                    },
-                    "& .MuiSlider-thumb:focus": {
-                      boxShadow: "none  !important",
-                      outline: "none  !important",
-                    },
-                  }}
-                />
-                <AiFillFastBackward className="h-8 w-8 text-center" />
+              <Stack
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+                spacing={2}
+                divider={<Divider orientation="vertical" flexItem />}
+              >
+                <div
+                  className="h-[5em] w-[10em] relative mixbutton extra"
+                  data-key="w"
+                >
+                  stop
+                  <div className="absolute bottom-1 right-1">w</div>
+                </div>
+                <div
+                  className="h-[5em] w-[10em] relative mixbutton extra"
+                  data-key="v"
+                >
+                  pause
+                  <div className="absolute bottom-1 right-1">v</div>
+                </div>
+                <div
+                  className="h-[5em] w-[10em] relative mixbutton extra"
+                  data-key="x"
+                >
+                  play
+                  <div className="absolute bottom-1 right-1">x</div>
+                </div>
               </Stack>
-            </Stack>
-            <Stack
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
-              spacing={2}
-              divider={<Divider orientation="vertical" flexItem />}
-            >
-              <div className="h-[5em] w-[10em] relative mixbutton extra" data-key="w">
-                stop
-                <div className="absolute bottom-1 right-1">w</div>
-                </div>
-              <div className="h-[5em] w-[10em] relative mixbutton extra" data-key="v">
-                pause
-                <div className="absolute bottom-1 right-1">v</div>
-                </div>
-              <div className="h-[5em] w-[10em] relative mixbutton extra" data-key="x">
-                play
-                <div className="absolute bottom-1 right-1">x</div>
-                </div>
-            </Stack>
-          </div>
-          <div className="mixbuttoncontainer justify-center">
-            <div className="mixbutton relative blue rounded-lg" data-key="n">
-              Nobinobi <br /> 伸び伸び
-              <div className="absolute bottom-1 right-1">n</div>
             </div>
-            <div className="mixbutton relative green rounded-lg" data-key="s">
-            Shitsuren <br /> 失恋
-              <div className="absolute bottom-1 right-1">s</div>
-            </div>
-            <div className="mixbutton relative yellow rounded-lg" data-key="k">
-            Kikai <br /> 機械
-              <div className="absolute bottom-1 right-1">k</div>
-            </div>
-            <div className="mixbutton relative pink rounded-lg" data-key="p">
-            Keppaku <br /> 潔白
-              <div className="absolute bottom-1 right-1">p</div>
-            </div>
-            <div className="mixbutton relative yellow rounded-lg" data-key="y">
-            Yoisho <br /> よいしょ
-              <div className="absolute bottom-1 right-1">y</div>
-            </div>
-            <div className="mixbutton relative pink rounded-lg" data-key="g">
-            Sutageiza <br /> スターゲイザー
-              <div className="absolute bottom-1 right-1">g</div>
-            </div>
-            <div className="mixbutton relative blue rounded-lg" data-key="a">
-            Kaikoshumi <br /> 懐古趣味
-              <div className="absolute bottom-1 right-1">a</div>
-            </div>
-            <div className="mixbutton relative green rounded-lg" data-key="i">
-            Koukai <br /> 後悔
-              <div className="absolute bottom-1 right-1">i</div>
-            </div>
-            <div className="mixbutton relative green rounded-lg" data-key="t">
-            Koukai <br /> Instrumental <br />後悔
-              <div className="absolute bottom-1 right-1">t</div>
-            </div>
-            <div className="mixbutton relative yellow rounded-lg" data-key="u">
-            Ukiyo <br /> 浮世
-              <div className="absolute bottom-1 right-1">u</div>
-            </div>
-            <div className="mixbutton relative pink rounded-lg" data-key="h">
-            Hitomebore <br /> 目惚れ
-              <div className="absolute bottom-1 right-1">h</div>
-            </div>
-            <div className="mixbutton relative blue rounded-lg" data-key="r">
-            Ryoko <br /> 旅行
-              <div className="absolute bottom-1 right-1">r</div>
-            </div>
-            <div className="mixbutton relative pink rounded-lg" data-key="o">
-            Kyusoku <br /> 休息
-              <div className="absolute bottom-1 right-1">o</div>
-            </div>
-            <div className="mixbutton relative blue rounded-lg" data-key="z">
-            Nozomi <br /> 希
-              <div className="absolute bottom-1 right-1">z</div>
-            </div>
-            <div className="mixbutton relative green rounded-lg" data-key="e">
-              Unreleased <br /> 未発表
-              <div className="absolute bottom-1 right-1">e</div>
-            </div>
-            <div className="mixbutton relative yellow rounded-lg" data-key="d">
-              Unreleased <br /> 未発表
-              <div className="absolute bottom-1 right-1">d</div>
+            <div className="mixbuttoncontainer justify-center">
+              <div className="mixbutton relative blue rounded-lg" data-key="n">
+                Nobinobi <br /> 伸び伸び
+                <div className="absolute bottom-1 right-1">n</div>
+              </div>
+              <div className="mixbutton relative green rounded-lg" data-key="s">
+                Shitsuren <br /> 失恋
+                <div className="absolute bottom-1 right-1">s</div>
+              </div>
+              <div
+                className="mixbutton relative yellow rounded-lg"
+                data-key="k"
+              >
+                Kikai <br /> 機械
+                <div className="absolute bottom-1 right-1">k</div>
+              </div>
+              <div className="mixbutton relative pink rounded-lg" data-key="p">
+                Keppaku <br /> 潔白
+                <div className="absolute bottom-1 right-1">p</div>
+              </div>
+              <div
+                className="mixbutton relative yellow rounded-lg"
+                data-key="y"
+              >
+                Yoisho <br /> よいしょ
+                <div className="absolute bottom-1 right-1">y</div>
+              </div>
+              <div className="mixbutton relative pink rounded-lg" data-key="g">
+                Sutageiza <br /> スターゲイザー
+                <div className="absolute bottom-1 right-1">g</div>
+              </div>
+              <div className="mixbutton relative blue rounded-lg" data-key="a">
+                Kaikoshumi <br /> 懐古趣味
+                <div className="absolute bottom-1 right-1">a</div>
+              </div>
+              <div className="mixbutton relative green rounded-lg" data-key="i">
+                Koukai <br /> 後悔
+                <div className="absolute bottom-1 right-1">i</div>
+              </div>
+              <div className="mixbutton relative green rounded-lg" data-key="t">
+                Koukai <br /> Instrumental <br />
+                後悔
+                <div className="absolute bottom-1 right-1">t</div>
+              </div>
+              <div
+                className="mixbutton relative yellow rounded-lg"
+                data-key="u"
+              >
+                Ukiyo <br /> 浮世
+                <div className="absolute bottom-1 right-1">u</div>
+              </div>
+              <div className="mixbutton relative pink rounded-lg" data-key="h">
+                Hitomebore <br /> 目惚れ
+                <div className="absolute bottom-1 right-1">h</div>
+              </div>
+              <div className="mixbutton relative blue rounded-lg" data-key="r">
+                Ryoko <br /> 旅行
+                <div className="absolute bottom-1 right-1">r</div>
+              </div>
+              <div className="mixbutton relative pink rounded-lg" data-key="o">
+                Kyusoku <br /> 休息
+                <div className="absolute bottom-1 right-1">o</div>
+              </div>
+              <div className="mixbutton relative blue rounded-lg" data-key="z">
+                Nozomi <br /> 希
+                <div className="absolute bottom-1 right-1">z</div>
+              </div>
+              <div className="mixbutton relative green rounded-lg" data-key="e">
+                Unreleased <br /> 未発表
+                <div className="absolute bottom-1 right-1">e</div>
+              </div>
+              <div
+                className="mixbutton relative yellow rounded-lg"
+                data-key="d"
+              >
+                Unreleased <br /> 未発表
+                <div className="absolute bottom-1 right-1">d</div>
+              </div>
             </div>
           </div>
+        </div>
+        <div className="grid content-center leading-7 mt-5">
+          <h2 className="text-xl">10PRINTTUNES</h2>
+          <Divider flexItem className="mb-2 w-[80%]" />
+          <ol>
+            <li>1. Nozomi 希 | Hope</li>
+            <li>2. Kyusoku 休息 | Rest</li>
+            <li>3. Ryoko 旅行 | Trip</li>
+            <li>4. Hitomebore 目惚れ | Admiration</li>
+            <li>5. Ukiyo 浮世 | World</li>
+            <li>6. Koukai 後悔 | Regret</li>
+            <li>7. Koukai Instrumental 後悔 | Regret</li>
+            <li>8. Kaikoshumi 懐古趣味 | Nostalgia</li>
+            <li>9. Yoisho よいしょ | Good Day</li>
+            <li>10. Sutageiza スターゲイザー | Stargazer</li>
+            <li>11. Keppaku 潔白 | Innocence</li>
+            <li>12. Kikai 機械 | Chance</li>
+            <li>13. Shitsuren 失恋 | Broken Heart</li>
+            <li>14. Nobinobi 伸び伸び | Carefree</li>
+          </ol>
         </div>
       </div>
     </>
