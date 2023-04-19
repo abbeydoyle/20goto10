@@ -435,9 +435,9 @@ export default function Songs() {
 
   return (
     <>
-    <h1 className="text-[#2e2640] z-50 text-3xl pt-5 mt-5 text-center">
-          /* My Music */
-        </h1>
+      <pre className="text-[#2e2640] z-50 text-3xl pt-5 mt-[4%] ml-[-7%] text-center">
+        <code>/* My Music */</code>
+      </pre>
       <div className="grid grid-cols-3 ml-[-5%]">
         <div className="mixercontainer w-70% col-span-2">
           <div className="mixer mt-[5%] grid grid-flow-col auto-cols-2 gap-2">
