@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import MessageAlert from "../components/MessageAlert";
+import animation from "../assets/animation.gif"
 
 // TODO: change email service - connect to client account
 
@@ -130,7 +131,11 @@ const Contact = () => {
           </button>
         </form>
       </div>
-
+      {/* <div className="pixelart float-right bounce-5">
+      </div>
+      <div className="pixelart2 float-right ml-[20%]">
+      </div> */}
+      <img src={animation} alt="pixel character walking" className="h-[8rem] w-[8rem] slide-right mb-[2%]"></img>
       {showMessageModal && <MessageAlert setOpenMessageModal={setshowMessageModal} />}
     </>
   );

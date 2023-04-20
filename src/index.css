@@ -304,3 +304,48 @@ body {
   );
   border-color: #382e59 #2e2640;
 }
+
+@keyframes slide-from-right {
+  from {
+    right: 100%;
+  }
+  to {
+    right: -20%;
+  }
+}
+
+/* Element to be moved. Must have position: absolute */
+.slide-right {
+  position: absolute;
+  animation-timing-function: linear;
+  right: 100%;
+  bottom: 5%;
+  transform: translateX(-50%);
+  animation-name: slide-from-right, roll-back-left;
+  animation-duration: 15s, 15s;
+  animation-delay: 0s, 15s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes roll-back-left {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* .roll-back {
+  position: absolute;
+  animation-timing-function: linear;
+  right: 100%;
+  bottom: 5%;
+  transform: translateX(-50%);
+  animation-name: roll-back-left;
+  animation-delay: 15s;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+} */
