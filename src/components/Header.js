@@ -22,25 +22,25 @@ function Header() {
           20goto10
         </span>
       </Navbar.Brand>
-      <Navbar.Toggle className="bg-transparent hover:bg-cyan-300/50"/>
+      <Navbar.Toggle className="bg-transparent hover:bg-cyan-300/[0.5]"/>
       <Navbar.Collapse>
-        <Navbar.Link href="/" className="bg-transparent hover:bg-cyan-300/50 rounded-lg border-b-0">
+        <Navbar.Link href="/" className="bg-transparent hover:bg-cyan-300/[0.5] rounded-lg border-b-0">
           <span>
             Home 家
           </span>
         </Navbar.Link>
-        <Navbar.Link href="/songs" className="bg-transparent hover:bg-cyan-300/50 rounded-lg border-b-0">
+        <Navbar.Link href="/songs" className="bg-transparent hover:bg-cyan-300/[0.5] rounded-lg border-b-0">
           <span>
             Songs 曲
           </span>
         </Navbar.Link>
-        <Navbar.Link href="/artist" className="bg-transparent hover:bg-cyan-300/50 rounded-lg border-b-0">
+        <Navbar.Link href="/artist" className="bg-transparent hover:bg-cyan-300/[0.5] rounded-lg border-b-0">
           <span>
             Artist アーティスト
           </span>
         </Navbar.Link>
 
-        <Navbar.Link href="/contact" className="bg-transparent hover:bg-cyan-300/50 rounded-lg border-b-0">
+        <Navbar.Link href="/contact" className="bg-transparent hover:bg-cyan-300/[0.5] rounded-lg border-b-0">
           <span>
             Contact コンタクト
           </span>
