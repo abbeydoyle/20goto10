@@ -59,7 +59,6 @@ a:active {
 }
 
 .container {
-  overflow-y: auto;
   padding-bottom: 4.5rem;
 }
 .header,
@@ -314,7 +313,7 @@ body {
 }
 @media (max-width: 768px) {
   .mixercontainer {
-    transform: scale(0.3);
+    transform: scale(0.4);
   }
   .mixer-parent {
     display: flex;
@@ -380,11 +379,4 @@ body {
     left: -200px; /* Adjust this according to your image's width */
     transform: translate(0, 0) rotate(-360deg);
   }
-}
-
-.animation-container {
-  position: relative;
-  width: 130%;
-  overflow: hidden; /* Hide the parts of the animation that go outside the container */
-  height: 8rem; /* Set the container's height equal to the height of the image or the desired height */
 }

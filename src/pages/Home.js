@@ -38,7 +38,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="md:h-screen grid place-content-center md:w-auto md:mt-[-2%] mt-[40%]">
+      <div className="md:h-screen grid place-content-center w-auto md:mt-[-2%] mt-[40%]">
         <pre>
           <h2
             className="z-30 pb-[2%] md:ml-0 ml-[6%]"
