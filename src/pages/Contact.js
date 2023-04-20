@@ -122,7 +122,7 @@ const Contact = () => {
         <img
           src={animation}
           alt="pixel character walking"
-          className="h-[8rem] w-[8rem] slide-right md:mb-[2%] mb-[2%] overscroll-contain"
+          className="h-[8rem] w-[8rem] slide-right md:mb-[2%] overscroll-contain"
         ></img>
       </div>
       {/* <div className="pixelart float-right bounce-5">

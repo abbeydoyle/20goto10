@@ -314,7 +314,7 @@ body {
 }
 @media (max-width: 768px) {
   .mixercontainer {
-    transform: scale(0.4);
+    transform: scale(0.3);
   }
   .mixer-parent {
     display: flex;
