@@ -68,6 +68,9 @@ a:active {
 }
 
 @media only screen and (min-width: 768px) {
+  .slide-right {
+    animation: slide-roll-large 10s linear infinite;
+  }
   .header {
     background-image: linear-gradient(
       120deg,
@@ -313,59 +316,75 @@ body {
   .mixercontainer {
     transform: scale(0.4);
   }
-  /* .mixer {
-    top: 0;
-    left: 0;
-  } */
   .mixer-parent {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     /* min-height: 100vh; Use viewport height to ensure full screen height */
   }
-}
-
-@keyframes slide-from-right {
-  from {
-    right: 100%;
-  }
-  to {
-    right: -20%;
+  .slide-right {
+    animation: slide-roll-small 10s infinite;
   }
 }
-
 /* Element to be moved. Must have position: absolute */
 .slide-right {
   position: absolute;
-  animation-timing-function: linear;
   right: 100%;
   bottom: 5%;
   transform: translateX(-50%);
-  animation-name: slide-from-right, roll-back-left;
-  animation-duration: 15s, 15s;
-  animation-delay: 0s, 15s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  transform-origin: center;
 }
 
-@keyframes roll-back-left {
-  from {
-    transform: rotate(360deg);
+@keyframes slide-roll-large {
+  0% {
+    left: -200px; /* Adjust this according to your image's width */
+    transform: rotate(0);
   }
-  to {
-    transform: rotate(0deg);
+  66.7% {
+    left: 100%;
+    transform: rotate(0);
+  }
+  66.8% {
+    transform: rotate(0);
+  }
+  100% {
+    left: -200px; /* Adjust this according to your image's width */
+    transform: rotate(-360deg);
   }
 }
 
-/* .roll-back {
-  position: absolute;
-  animation-timing-function: linear;
-  right: 100%;
-  bottom: 5%;
-  transform: translateX(-50%);
-  animation-name: roll-back-left;
-  animation-delay: 15s;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-} */
+@keyframes slide-roll-small {
+  0%, 100% {
+    left: -200px; /* Adjust this according to your image's width */
+    transform: translate(0, 0) rotate(0);
+  }
+  25% {
+    left: 20%; /* Position where the bounce will happen */
+    transform: translate(0, 0) rotate(0);
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.5);
+  }
+  37.5% {
+    left: 20%; /* Position where the bounce will happen */
+    transform: translate(0, -50px) rotate(0); /* Height of the bounce */
+    animation-timing-function: cubic-bezier(0.75, -0.5, 0.35, 1);
+  }
+  75% {
+    left: 100%;
+    transform: translate(0, 0) rotate(0);
+    animation-timing-function: linear;
+  }
+  75.1% {
+    transform: translate(0, 0) rotate(0);
+  }
+  100% {
+    left: -200px; /* Adjust this according to your image's width */
+    transform: translate(0, 0) rotate(-360deg);
+  }
+}
+
+.animation-container {
+  position: relative;
+  width: 130%;
+  overflow: hidden; /* Hide the parts of the animation that go outside the container */
+  height: 8rem; /* Set the container's height equal to the height of the image or the desired height */
+}

@@ -10,7 +10,6 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  // const [emailSent, setEmailSent] = useState(false);
   const [showMessageModal, setshowMessageModal] = useState(false);
 
   const submit = () => {
@@ -32,7 +31,6 @@ const Contact = () => {
       setName("");
       setEmail("");
       setMessage("");
-      // setEmailSent(true);
       setshowMessageModal(true);
     } else {
       alert("Please fill in all fields.");
@@ -43,9 +41,9 @@ const Contact = () => {
     <>
       <h1 className="text-center md:pt-[10%] pb-5 md:text-3xl text-xl text-[#2e131c] font-bold">
         Contact me
-        <Divider flexItem className="mb-2 w-[40%]" variant="middle" />
+        <Divider flexItem className="mb-2 w-[40%] ml-[30%]" variant="middle" />
       </h1>
-      <div className="grid md:grid-cols-2 w-full md:px-5 md:pt-10 md:pb-10 md:mb-10 ">
+      <div className="grid md:grid-cols-2 w-full md:px-5 md:pt-10 md:pb-10 md:mb-10">
         <aside className="w-full self-center pb-2">
           <h4 className="text-[#2e131c] md:leading-10 ">
             thank you for visiting the site
@@ -121,16 +119,19 @@ const Contact = () => {
             </span>
           </button>
         </form>
+        <img
+          src={animation}
+          alt="pixel character walking"
+          className="h-[8rem] w-[8rem] slide-right md:mb-[2%] mb-[2%] overscroll-contain"
+        ></img>
       </div>
       {/* <div className="pixelart float-right bounce-5">
       </div>
       <div className="pixelart2 float-right ml-[20%]">
       </div> */}
-      <img
-        src={animation}
-        alt="pixel character walking"
-        className="h-[8rem] w-[8rem] slide-right mb-[2%]"
-      ></img>
+      {/* <div className="animation-container z-50"> */}
+
+      {/* </div> */}
       {showMessageModal && (
         <MessageAlert setOpenMessageModal={setshowMessageModal} />
       )}

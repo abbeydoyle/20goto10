@@ -438,7 +438,7 @@ export default function Songs() {
       <pre className="text-[#2e2640] z-50 md:text-3xl text-xl md:pt-5 md:mt-[4%] ml-[-7%] text-center">
         <h2>{`/* My Music */`}</h2>
       </pre>
-      <div className="md:grid md:grid-cols-3 ml-[-5%] mixer-parent">
+      <div className="md:grid md:grid-cols-3 md:ml-[-5%] mixer-parent">
         <div className="mixercontainer w-70% md:col-span-2">
           <div className="mixer md:mt-[5%] mt-[-20%] grid grid-flow-col auto-cols-2 gap-2">
             <div className="min-w-[20rem]">
