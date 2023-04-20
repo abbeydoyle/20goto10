@@ -12,7 +12,7 @@ function Header() {
 
     <Navbar
       fluid={true}
-      className="header bg-transparent md:h-auto md:fixed z-50 md:top-0"
+      className="header bg-transparent hover:bg-transparent md:h-auto md:fixed z-50 md:top-0"
       id="header"
       rounded={true}
     >
@@ -22,26 +22,26 @@ function Header() {
           20goto10
         </span>
       </Navbar.Brand>
-      <Navbar.Toggle />
+      <Navbar.Toggle className="bg-transparent hover:bg-cyan-300/50"/>
       <Navbar.Collapse>
-        <Navbar.Link href="/">
-          <span className="">
+        <Navbar.Link href="/" className="bg-transparent hover:bg-cyan-300/50 rounded-lg border-b-0">
+          <span>
             Home 家
           </span>
         </Navbar.Link>
-        <Navbar.Link href="/songs">
-          <span className="">
+        <Navbar.Link href="/songs" className="bg-transparent hover:bg-cyan-300/50 rounded-lg border-b-0">
+          <span>
             Songs 曲
           </span>
         </Navbar.Link>
-        <Navbar.Link href="/artist">
-          <span className="">
+        <Navbar.Link href="/artist" className="bg-transparent hover:bg-cyan-300/50 rounded-lg border-b-0">
+          <span>
             Artist アーティスト
           </span>
         </Navbar.Link>
 
-        <Navbar.Link href="/contact">
-          <span className="">
+        <Navbar.Link href="/contact" className="bg-transparent hover:bg-cyan-300/50 rounded-lg border-b-0">
+          <span>
             Contact コンタクト
           </span>
         </Navbar.Link>

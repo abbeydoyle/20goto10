@@ -21,7 +21,7 @@ export default function FooterApp() {
           </a>
           .
         </span>
-        <div className="flex space-x-6  text-lg justify-center mt-0">
+        <div className="flex space-x-6  text-lg md:text-xl justify-center mt-0">
         <a
             target="_blank"
             rel="noreferrer"

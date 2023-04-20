@@ -38,18 +38,18 @@ export default function Home() {
 
   return (
     <>
-    <div className="md:h-screen grid place-content-center">
-      <pre>
-        <h2
-          className="z-30 start-0 pb-[2%]"
-          style={{ ...h4initialStyle, ...h4Style }}
-        >
-          {`// hello my name is`}
-        </h2>
-      </pre>
-      <pre className="z-10 hidden md:block text-[12px] label leading-[12px]grid justify-start">
-        <code>
-          {`
+      <div className="md:h-screen grid place-content-center md:w-auto md:mt-[-2%] mt-[40%]">
+        <pre>
+          <h2
+            className="z-30 pb-[2%] md:ml-0 ml-[6%]"
+            style={{ ...h4initialStyle, ...h4Style }}
+          >
+            {`// hello my name is`}
+          </h2>
+        </pre>
+        <pre className="z-10 hidden md:block text-[12px] label leading-[12px]grid justify-start">
+          <code>
+            {`
  222222222222222         000000000                                                             tttt                                  1111111        000000000     
  2:::::::::::::::22     00:::::::::00                                                        ttt:::t                                 1::::::1      00:::::::::00   
  2::::::222222:::::2  00:::::::::::::00                                                      t:::::t                                1:::::::1    00:::::::::::::00 
@@ -74,27 +74,27 @@ export default function Home() {
                                                  ggg::::::ggg                                                                                                      
                                                     gggggg                                                                                                         
          `}
-        </code>
-      </pre>
-      <pre className="z-30 block md:hidden text-[10px] label leading-[10px] grid justify-start m-5">
-        <code>
-          {` 2222    00000                     tt              1   00000  
+          </code>
+        </pre>
+        <pre className="z-30 block md:hidden text-[10px] label leading-[10px] grid justify-start m-5 object-contain">
+          <code>
+            {` 2222    00000                     tt              1   00000  
 222222  00   00    gggggg  oooo    tt     oooo    111 00   00 
     222 00   00   gg   gg oo  oo   tttt  oo  oo    11 00   00 
  2222   00   00   ggggggg oo  oo   tt    oo  oo    11 00   00 
 2222222  00000         gg  oooo     tttt  oooo    111  00000  
                    ggggg                                      
 `}
-        </code>
-      </pre>
-      <pre>
-        <h2
-          className="z-30 pr-[20%] welcomesite"
-          style={{ ...h2initialStyle, ...h2Style }}
-        >
-          {`// welcome to my site`}
-        </h2>
-      </pre>
+          </code>
+        </pre>
+        <pre>
+          <h2
+            className="z-30 pr-[10%] md:mt-[-5%] welcomesite"
+            style={{ ...h2initialStyle, ...h2Style }}
+          >
+            {`// welcome to my site`}
+          </h2>
+        </pre>
       </div>
     </>
   );
