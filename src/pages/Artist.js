@@ -4,6 +4,7 @@ import Dog from "../components/ArtistPages/Dog";
 import PhoneNo from "../components/ArtistPages/PhoneNo";
 import SSN from "../components/ArtistPages/SSN";
 import Typewriter from "typewriter-effect";
+import Stack from "@mui/material/Stack";
 
 export default function Artist() {
   useEffect(() => {
@@ -184,7 +185,7 @@ export default function Artist() {
   return (
     <>
       <div className="grid grid-row justify-items-center">
-        <div className="mt-[3%] monitorcase leading-8 relative md:w-[40em] w-full md:h-[21rem] h-[100%]">
+        <div className="mt-[3%] monitorcase leading-8 relative md:w-[40em] w-full md:h-[21rem] h-[500px]">
           <h1 className="text-3xl md:pb-0 pb-2">About me</h1>
           <h2>choose an option:</h2>
           <ol className="justify-self-start">
@@ -207,8 +208,12 @@ export default function Artist() {
               />
             </li>
           </ol>
-          <form className="absolute bottom-2 left-2">
+          <form className="absolute bottom-2 left-2 mr-2">
             <p>Type your command here:</p>
+            <Stack
+                direction="row"
+                spacing={1}
+              >
             <input
               className="border-solid border-2 border-black bg-transparent"
               required
@@ -221,6 +226,7 @@ export default function Artist() {
             >
               Enter
             </button>
+            </Stack>
           </form>
         </div>
 
