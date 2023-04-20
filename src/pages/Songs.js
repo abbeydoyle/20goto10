@@ -435,12 +435,12 @@ export default function Songs() {
 
   return (
     <>
-      <pre className="text-[#2e2640] z-50 text-3xl pt-5 mt-[4%] ml-[-7%] text-center">
+      <pre className="text-[#2e2640] z-50 md:text-3xl text-xl md:pt-5 md:mt-[4%] ml-[-7%] text-center">
         <h2>{`/* My Music */`}</h2>
       </pre>
-      <div className="grid grid-cols-3 ml-[-5%]">
-        <div className="mixercontainer w-70% col-span-2">
-          <div className="mixer mt-[5%] grid grid-flow-col auto-cols-2 gap-2">
+      <div className="md:grid md:grid-cols-3 ml-[-5%] mixer-parent">
+        <div className="mixercontainer w-70% md:col-span-2">
+          <div className="mixer md:mt-[5%] mt-[-20%] grid grid-flow-col auto-cols-2 gap-2">
             <div className="min-w-[20rem]">
               <h1 className="pb-2 pt-2 tracking-widest text-xl">
                 mixboard v20goto10
@@ -668,7 +668,7 @@ export default function Songs() {
             </div>
           </div>
         </div>
-        <div className="grid content-center leading-7 mt-5">
+        <div className="grid content-center leading-7 mt-[12%] hidden md:block">
           <h2 className="text-xl">10PRINTTUNES</h2>
           <Divider flexItem className="mb-2 w-[80%]" />
           <ol>
@@ -688,6 +688,28 @@ export default function Songs() {
             <li>14. Nobinobi 伸び伸び | Carefree</li>
           </ol>
         </div>
+      </div>
+      <div
+        className="md:hidden block text-xs mt-[-20%] overflow-y-auto"
+      >
+        <h2 className="text-base">10PRINTTUNES</h2>
+          <Divider flexItem className="mb-2 w-[80%]" />
+        <ol className="leading-5">
+            <li>1. Nozomi 希 | Hope</li>
+            <li>2. Kyusoku 休息 | Rest</li>
+            <li>3. Ryoko 旅行 | Trip</li>
+            <li>4. Hitomebore 目惚れ | Admiration</li>
+            <li>5. Ukiyo 浮世 | World</li>
+            <li>6. Koukai 後悔 | Regret</li>
+            <li>7. Koukai Instrumental 後悔 | Regret</li>
+            <li>8. Kaikoshumi 懐古趣味 | Nostalgia</li>
+            <li>9. Yoisho よいしょ | Good Day</li>
+            <li>10. Sutageiza スターゲイザー | Stargazer</li>
+            <li>11. Keppaku 潔白 | Innocence</li>
+            <li>12. Kikai 機械 | Chance</li>
+            <li>13. Shitsuren 失恋 | Broken Heart</li>
+            <li>14. Nobinobi 伸び伸び | Carefree</li>
+          </ol>
       </div>
     </>
   );

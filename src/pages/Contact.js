@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import MessageAlert from "../components/MessageAlert";
-import animation from "../assets/animation.gif"
+import animation from "../assets/animation.gif";
+import Divider from "@mui/material/Divider";
 
 // TODO: change email service - connect to client account
 
@@ -40,25 +41,24 @@ const Contact = () => {
 
   return (
     <>
-
-      <h1 className="text-center pt-[10%] pb-5 text-3xl text-[#2e131c] font-bold">
+      <h1 className="text-center md:pt-[10%] pb-5 md:text-3xl text-xl text-[#2e131c] font-bold">
         Contact me
-        <hr className="hidden md:block w-[40%] border-[#2e131c] border-[1px] translate-x-[75%]"></hr>
+        <Divider flexItem className="mb-2 w-[40%]" variant="middle" />
       </h1>
-      <div className="grid md:grid-cols-2 w-full md:px-5 md:pt-10 md:pb-10 md:mb-10">
-        <aside className="w-full self-center">
-          <h4 className="text-[#2e131c] leading-10 ">thank you for visiting the site</h4>
-          <hr className="w-[50%] pb-5 border-[#2e131c]"></hr>
-          <p className="text-[#36261b] leading-10">
-            have any inquiries?
-          </p>
-          <p className="text-[#2e131c] leading-10">
+      <div className="grid md:grid-cols-2 w-full md:px-5 md:pt-10 md:pb-10 md:mb-10 ">
+        <aside className="w-full self-center pb-2">
+          <h4 className="text-[#2e131c] md:leading-10 ">
+            thank you for visiting the site
+          </h4>
+          <Divider flexItem className="mb-2 w-[80%]" />
+          <p className="text-[#36261b] md:leading-10">have any inquiries?</p>
+          <p className="text-[#2e131c] md:leading-10">
             any hate mail? (keep it to yourself)
           </p>
-          <p className="text-[#2e131c] leading-10">
+          <p className="text-[#2e131c] md:leading-10">
             any compliments? (preferable)
           </p>
-          <p className="text-[#2e131c] leading-10">
+          <p className="text-[#2e131c] md:leading-10">
             get in contact with me here
           </p>
         </aside>
@@ -74,10 +74,7 @@ const Contact = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
-            <label
-
-              className="peer-focus:font-medium absolute text-sm text-[#503674] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2e131c] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >
+            <label className="peer-focus:font-medium absolute text-sm text-[#503674] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2e131c] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
               Name
             </label>
           </div>
@@ -93,10 +90,7 @@ const Contact = () => {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <label
-
-              className="peer-focus:font-medium absolute text-sm text-[#503674] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2e131c] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >
+            <label className="peer-focus:font-medium absolute text-sm text-[#503674] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2e131c] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
               Email address
             </label>
           </div>
@@ -112,10 +106,7 @@ const Contact = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-            <label
-
-              className="peer-focus:font-medium absolute text-sm text-[#503674] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2e131c] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >
+            <label className="peer-focus:font-medium absolute text-sm text-[#503674] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2e131c] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
               Message
             </label>
           </div>
@@ -126,8 +117,8 @@ const Contact = () => {
             onClick={submit}
           >
             <span class="relative px-5 py-2.5 transition-all ease-in duration-75 text-white bg-[#2e131c] rounded-md group-hover:bg-opacity-0">
-      Send
-  </span>
+              Send
+            </span>
           </button>
         </form>
       </div>
@@ -135,8 +126,14 @@ const Contact = () => {
       </div>
       <div className="pixelart2 float-right ml-[20%]">
       </div> */}
-      <img src={animation} alt="pixel character walking" className="h-[8rem] w-[8rem] slide-right mb-[2%]"></img>
-      {showMessageModal && <MessageAlert setOpenMessageModal={setshowMessageModal} />}
+      <img
+        src={animation}
+        alt="pixel character walking"
+        className="h-[8rem] w-[8rem] slide-right mb-[2%]"
+      ></img>
+      {showMessageModal && (
+        <MessageAlert setOpenMessageModal={setshowMessageModal} />
+      )}
     </>
   );
 };
