@@ -283,6 +283,7 @@ export default function Songs() {
     var Nobinobi = new Howl({
       preload: true,
       autoplay: false,
+      html5: true,
       src: [NobinobiImport],
     });
 
@@ -292,6 +293,7 @@ export default function Songs() {
     var Hitom = new Howl({
       preload: true,
       autoplay: false,
+      html5: true,
       src: [HitomImport],
     });
 
@@ -302,6 +304,7 @@ export default function Songs() {
     var Shitsur = new Howl({
       preload: true,
       autoplay: false,
+      html5: true,
       src: [ShitsurImport],
     });
 
@@ -311,6 +314,7 @@ export default function Songs() {
     var Kikai = new Howl({
       preload: true,
       autoplay: false,
+      html5: true,
       src: [KikaiImport],
     });
 
@@ -321,6 +325,7 @@ export default function Songs() {
     var Yoishio = new Howl({
       preload: true,
       autoplay: false,
+      html5: true,
       src: [YoishioImport],
     });
 
@@ -330,6 +335,7 @@ export default function Songs() {
     var Sut = new Howl({
       preload: true,
       autoplay: false,
+      html5: true,
       src: [SutImport],
     });
 
@@ -340,6 +346,7 @@ export default function Songs() {
     var Kaiko = new Howl({
       preload: true,
       autoplay: false,
+      html5: true,
       src: [KaikoImport],
     });
 
@@ -349,6 +356,7 @@ export default function Songs() {
     var KoukaiInst = new Howl({
       preload: true,
       autoplay: false,
+      html5: true,
       src: [KoukaiInstImport],
     });
 
@@ -359,6 +367,7 @@ export default function Songs() {
     var Ukiyo = new Howl({
       preload: true,
       autoplay: false,
+      html5: true,
       src: [UkiyoImport],
     });
 
@@ -368,6 +377,7 @@ export default function Songs() {
     var Kyu = new Howl({
       preload: true,
       autoplay: false,
+      html5: true,
       src: [KyuImport],
     });
 
@@ -378,6 +388,7 @@ export default function Songs() {
     var Noz = new Howl({
       preload: true,
       autoplay: false,
+      html5: true,
       src: [NozImport],
     });
 
@@ -388,6 +399,7 @@ export default function Songs() {
     var Kep = new Howl({
       preload: true,
       autoplay: false,
+      html5: true,
       src: [KepImport],
     });
 
@@ -398,6 +410,7 @@ export default function Songs() {
     var Kouk = new Howl({
       preload: true,
       autoplay: false,
+      html5: true,
       src: [KoukImport],
     });
 
@@ -407,6 +420,7 @@ export default function Songs() {
     var Ryoko = new Howl({
       preload: true,
       autoplay: false,
+      html5: true,
       src: [RyokoImport],
     });
 
