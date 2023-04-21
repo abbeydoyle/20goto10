@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import Slider from "@mui/material/Slider";
 import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
@@ -423,6 +423,37 @@ export default function Songs() {
       document.removeEventListener("touchend", removeActiveClassOnTouchend);
     };
   }, []);
+
+
+  const [hasAlertBeenShown, setHasAlertBeenShown] = useState(false);
+  const showAlertAndRemoveListener = useCallback((event) => {
+    // If the alert has already been shown, return early
+    if (hasAlertBeenShown) {
+      return;
+    }
+  
+    // Display the alert
+    alert('🔊 Clicking the soundboard or using the corresponding keys will play music and display mild lights. Please prepare the appropriate accommodations if necessary 🔊');
+  
+    // Set the flag to true
+    setHasAlertBeenShown(true);
+  
+    // Remove the event listener
+    document.removeEventListener('click', showAlertAndRemoveListener);
+  
+    // Stop the Howler
+    Howler.stop();
+  }, [hasAlertBeenShown, setHasAlertBeenShown]);
+
+  useEffect(() => {
+    // Add the event listener
+    document.addEventListener('click', showAlertAndRemoveListener, { capture: true, once: true });
+  
+    // Cleanup function to remove the event listener when the component unmounts
+    return () => {
+      document.removeEventListener('click', showAlertAndRemoveListener);
+    };
+  }, [showAlertAndRemoveListener]);
 
   const [value, setValue] = useState([]);
   const handleChange = (event, newValue) => {

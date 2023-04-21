@@ -68,7 +68,7 @@ a:active {
 
 @media only screen and (min-width: 768px) {
   .slide-right {
-    animation: slide-roll-large 10s linear infinite;
+    animation: slide-roll-large 15s linear infinite;
   }
   .header {
     background-image: linear-gradient(
@@ -322,7 +322,7 @@ body {
     /* min-height: 100vh; Use viewport height to ensure full screen height */
   }
   .slide-right {
-    animation: slide-roll-small 10s infinite;
+    animation: slide-roll-small 15s infinite;
   }
 }
 /* Element to be moved. Must have position: absolute */
