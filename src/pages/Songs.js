@@ -22,6 +22,8 @@ import KepImport from "../assets/audio/Keppaku.mp3";
 import KoukImport from "../assets/audio/Koukai.mp3";
 import RyokoImport from "../assets/audio/Ryoko.mp3";
 
+// import * as AudioImports from "../assets/audio/audio.js"
+
 export default function Songs() {
   useEffect(() => {
     const keysArr = [...document.querySelectorAll(".mixbutton")];
