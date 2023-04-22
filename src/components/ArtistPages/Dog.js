@@ -1,6 +1,6 @@
 import React from "react";
+import Divider from "@mui/material/Divider";
 
-// modal to appear when item as been added to cart
 export default function Dog({ setOpenDogModal }) {
   return (
     <>
@@ -37,6 +37,7 @@ export default function Dog({ setOpenDogModal }) {
               <div className="mt-2 text-center sm:ml-[4rem] sm:text-left -ml-8">
                 <h4 className="text-2xl font-medium text-[#2e131c] pb-4">
                   Nala
+                  <Divider flexItem className="mb-2 ml-[-5%]" variant="middle" />
                 </h4>
                 <img src="https://res.cloudinary.com/duxmtidm1/image/upload/v1682187531/out_nvml3g.png" alt="pixel dog" className=" pb-5"></img>
                 <h5 className="text-lg font-small text-[#2e131c] pb-4">

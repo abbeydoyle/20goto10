@@ -1,6 +1,6 @@
 import React from "react";
+import Divider from "@mui/material/Divider";
 
-// modal to appear when item as been added to cart
 export default function About({ setOpenAboutModal }) {
   return (
     <>
@@ -33,13 +33,14 @@ export default function About({ setOpenAboutModal }) {
               </svg>
               <span class="sr-only">Close modal</span>
             </button>
-            <div className="mt-3 mb-4 pl-3 sm:flex">
+            <div className="mt-3 mb-4 sm:flex">
               <div className="mt-2 text-center sm:ml-[4rem] sm:text-left -ml-8">
-                <h4 className="text-xl font-medium text-[#2e131c] pb-4">
+                <h4 className="text-2xl font-medium text-[#2e131c] pb-4">
                   About me
+                  <Divider flexItem className="mb-2 ml-[-5%]" variant="middle" />
                 </h4>
-                <h5 className="text-lg font-small text-[#2e131c] pb-4">
-                  a blurb
+                <h5 className="text-base font-small leading-7 text-[#2e131c] pb-4">
+                20goto10 has been described in many ways. Words like “vanilla” and “meh” are abuzz with every new release. Tennessee native, Aaron Doyle didn’t set out to become a cultural icon when he began this project, and he’s no closer to that than when he started. Maybe even less… yeah, definitely less. I’m pretty sure his dog doesn’t even like his music, but that doesn’t stop him from making it… Oh! He’s persistent! There! I said something nice! That was a nice thing I just said. How many characters is that now? Can I stop writing?
                 </h5>
                 <div className="flex justify-around ">
                   <button
