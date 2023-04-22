@@ -35,11 +35,12 @@ export default function Dog({ setOpenDogModal }) {
             </button>
             <div className="mt-3 mb-4 pl-3 sm:flex">
               <div className="mt-2 text-center sm:ml-[4rem] sm:text-left -ml-8">
-                <h4 className="text-xl font-medium text-[#2e131c] pb-4">
+                <h4 className="text-2xl font-medium text-[#2e131c] pb-4">
                   Nala
                 </h4>
+                <img src="https://res.cloudinary.com/duxmtidm1/image/upload/v1682187531/out_nvml3g.png" alt="pixel dog" className=" pb-5"></img>
                 <h5 className="text-lg font-small text-[#2e131c] pb-4">
-                  a blurb
+                  This is Nala - she set me back about $25
                 </h5>
                 <div className="flex justify-around ">
                   <button

@@ -86,7 +86,7 @@ a:active {
     height: auto;
     padding-left: 1rem;
     padding-right: 1rem;
-    z-index: 9001;
+    /* z-index: 9001; */
   }
   .keyboardcontainer {
     display: table-cell;
