@@ -7,69 +7,40 @@ import Commands from "../components/ArtistPages/Commands";
 import Typewriter from "typewriter-effect";
 import Stack from "@mui/material/Stack";
 
+const handleEvent = (element, type, handler) => {
+  element.addEventListener(type, handler);
+  return () => element.removeEventListener(type, handler);
+};
+
 export default function Artist() {
   useEffect(() => {
     const keysArr = [...document.querySelectorAll(".key")];
 
     const getKey = (event) => {
       const parsedKey = event.key.toLowerCase().replace("\\", "\\\\");
-      console.log("parsedKey:", parsedKey);
       const parsedCode = event.code.toLowerCase();
-      console.log("parsedCode:", parsedCode);
       const element =
         document.querySelector(`[data-key="${parsedCode}"]`) ||
         document.querySelector(`[data-key="${parsedKey}"]`);
-      console.log("element:", element);
 
       return element;
     };
 
-    // keyboard events
-    const addActiveClassOnKeydown = (event) => {
+    const toggleActiveClass = (event, action) => {
       const key = getKey(event);
       if (key) {
-        key.classList.add("active");
+        key.classList[action]("active");
       }
     };
-    document.addEventListener("keydown", addActiveClassOnKeydown);
 
-    const removeActiveClassOnKeyup = (event) => {
-      const key = getKey(event);
-      if (key) {
-        key.classList.remove("active");
-      }
-    };
-    document.addEventListener("keyup", removeActiveClassOnKeyup);
-
-    // mouseclick events
-    const addActiveClassOnMousedown = (event) => {
-      if (event.target.dataset.key) {
-        event.target.classList.add("active");
-      }
-    };
-    document.addEventListener("mousedown", addActiveClassOnMousedown);
-
-    const removeActiveClassOnMouseup = (event) => {
-      if (event.target.dataset.key) {
-        event.target.classList.remove("active");
-      }
-    };
-    document.addEventListener("mouseup", removeActiveClassOnMouseup);
-
-    // touchstart events
-    const addActiveClassOnTouchstart = (event) => {
-      if (event.target.dataset.key) {
-        event.target.classList.add("active");
-      }
-    };
-    document.addEventListener("mousedown", addActiveClassOnTouchstart);
-
-    const removeActiveClassOnTouchend = (event) => {
-      if (event.target.dataset.key) {
-        event.target.classList.remove("active");
-      }
-    };
-    document.addEventListener("mouseup", removeActiveClassOnTouchend);
+    const cleanup = [
+      handleEvent(document, "keydown", (e) => toggleActiveClass(e, "add")),
+      handleEvent(document, "keyup", (e) => toggleActiveClass(e, "remove")),
+      handleEvent(document, "mousedown", (e) => toggleActiveClass(e, "add")),
+      handleEvent(document, "mouseup", (e) => toggleActiveClass(e, "remove")),
+      handleEvent(document, "touchstart", (e) => toggleActiveClass(e, "add")),
+      handleEvent(document, "touchend", (e) => toggleActiveClass(e, "remove")),
+    ];
 
     const animate = (element) => {
       const hueColor = Math.floor(Math.random() * (360 - 0 + 1)) + 0;
@@ -109,38 +80,32 @@ export default function Artist() {
       });
     };
 
-    document.addEventListener("keydown", (event) => {
+    const keydownHandler = (event) => {
       const key = getKey(event);
+      if (key) animate(key);
+    };
 
-      if (key) {
-        animate(key);
-        console.log("key:", key);
-      }
-    });
+    const clickHandler = (event) => {
+      if (event.target.dataset.key) animate(event.target);
+    };
 
-    document.addEventListener("click", (event) => {
-      if (event.target.dataset.key) {
-        animate(event.target);
-        console.log("event.target:", event.target);
-      }
-    });
-
-    window.addEventListener("load", () => {
+    const loadHandler = () => {
       const key = document.querySelector(`[data-key="enter"]`);
       animate(key);
-      console.log("key:", key);
-    });
+    };
+
+    const keydownCleanup = handleEvent(document, "keydown", keydownHandler);
+    const clickCleanup = handleEvent(document, "click", clickHandler);
+    const loadCleanup = handleEvent(window, "load", loadHandler);
 
     return () => {
-      // cleanup
-      document.removeEventListener("keydown", addActiveClassOnKeydown);
-      document.removeEventListener("keyup", removeActiveClassOnKeyup);
-      document.removeEventListener("mousedown", addActiveClassOnMousedown);
-      document.removeEventListener("mouseup", removeActiveClassOnMouseup);
-      document.removeEventListener("touchstart", addActiveClassOnTouchstart);
-      document.removeEventListener("touchend", removeActiveClassOnTouchend);
+      cleanup.forEach((func) => func());
+      keydownCleanup();
+      clickCleanup();
+      loadCleanup();
     };
   }, []);
+
 
   const [message, setMessage] = useState("");
   const [showAboutModal, setshowAboutModal] = useState(false);
