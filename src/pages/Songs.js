@@ -228,6 +228,9 @@ export default function Songs() {
       }
     });
 
+    document.addEventListener("pointerdown", addActiveClassOnMousedown);
+document.addEventListener("pointerup", removeActiveClassOnMouseup);
+
     document.addEventListener("click", (event) => {
       if (event.target.dataset.key) {
         animate(event.target);
