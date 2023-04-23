@@ -151,16 +151,36 @@ export default function Songs() {
     const addActiveClassOnTouchstart = (event) => {
       if (event.target.dataset.key) {
         event.target.classList.add("active");
+        if (event.target.dataset.key in audioFiles) {
+          playAudio(event.target.dataset.key);
+        }
+        if (event.target.dataset.key === "w") {
+          Howler.stop();
+        }
+        if (event.target.dataset.key === "v") {
+          if (currentlyPlaying && currentlyPlaying.playing()) {
+            currentlyPlaying.pause();
+          } else if (currentlyPlaying) {
+            currentlyPlaying.play();
+          }
+        }
+        if (event.target.dataset.key === "x") {
+          if (currentlyPlaying && !currentlyPlaying.playing()) {
+            setTimeout(() => {
+              currentlyPlaying.play();
+            }, 500);
+          }
+        }
       }
     };
-    document.addEventListener("mousedown", addActiveClassOnTouchstart);
+    document.addEventListener("touchstart", addActiveClassOnTouchstart);
 
     const removeActiveClassOnTouchend = (event) => {
       if (event.target.dataset.key) {
         event.target.classList.remove("active");
       }
     };
-    document.addEventListener("mouseup", removeActiveClassOnTouchend);
+    document.addEventListener("touchend", removeActiveClassOnTouchend);
 
     const animate = (element) => {
       const hueColor = Math.floor(Math.random() * (360 - 0 + 1)) + 0;
