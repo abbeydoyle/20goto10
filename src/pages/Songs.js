@@ -22,7 +22,42 @@ import KepImport from "../assets/audio/Keppaku.mp3";
 import KoukImport from "../assets/audio/Koukai.mp3";
 import RyokoImport from "../assets/audio/Ryoko.mp3";
 
-// import * as AudioImports from "../assets/audio/audio.js"
+const audioFiles = {
+  n: NobinobiImport,
+  s: ShitsurImport,
+  k: KikaiImport,
+  y: YoishioImport,
+  g: SutImport,
+  a: KaikoImport,
+  t: KoukaiInstImport,
+  u: UkiyoImport,
+  h: HitomImport,
+  o: KyuImport,
+  z: NozImport,
+  p: KepImport,
+  i: KoukImport,
+  r: RyokoImport,
+};
+const howlInstances = {};
+let currentlyPlaying = null;
+
+Object.keys(audioFiles).forEach((key) => {
+  howlInstances[key] = new Howl({
+    preload: true,
+    autoplay: false,
+    // html5: true,
+    src: [audioFiles[key]],
+  });
+});
+
+const playAudio = (key) => {
+  if (currentlyPlaying) {
+    currentlyPlaying.pause();
+  }
+
+  howlInstances[key].play();
+  currentlyPlaying = howlInstances[key];
+};
 
 export default function Songs() {
   useEffect(() => {
@@ -30,81 +65,10 @@ export default function Songs() {
 
     const getKey = (event) => {
       const parsedKey = event.key.toLowerCase().replace("\\", "\\\\");
-      console.log("parsedKey:", parsedKey);
       const parsedCode = event.code.toLowerCase();
-      console.log("parsedCode:", parsedCode);
       const element =
         document.querySelector(`[data-key="${parsedCode}"]`) ||
         document.querySelector(`[data-key="${parsedKey}"]`);
-      console.log("element:", element);
-
-      if (parsedKey === "n") {
-        Howler.stop();
-        playNobinobi();
-      }
-      if (parsedKey === "s") {
-        Howler.stop();
-        playShitsur();
-      }
-      if (parsedKey === "k") {
-        Howler.stop();
-        playKikai();
-      }
-      if (parsedKey === "y") {
-        Howler.stop();
-        playYoishio();
-      }
-      if (parsedKey === "g") {
-        Howler.stop();
-        playSut();
-      }
-      if (parsedKey === "a") {
-        Howler.stop();
-        playKaiko();
-      }
-      if (parsedKey === "t") {
-        Howler.stop();
-        playKoukaiInst();
-      }
-      if (parsedKey === "u") {
-        Howler.stop();
-        playUkiyo();
-      }
-      if (parsedKey === "h") {
-        Howler.stop();
-        playHitom();
-      }
-      if (parsedKey === "o") {
-        Howler.stop();
-        playKyu();
-      }
-      if (parsedKey === "z") {
-        Howler.stop();
-        playNoz();
-      }
-      if (parsedKey === "p") {
-        Howler.stop();
-        playKep();
-      }
-      if (parsedKey === "i") {
-        Howler.stop();
-        playKouk();
-      }
-      if (parsedKey === "r") {
-        Howler.stop();
-        playRyoko();
-      }
-      if (parsedKey === "w") {
-        Howler.stop();
-      }
-      if (parsedKey === "v") {
-        Howler.stop();
-      }
-      if (parsedKey === "x") {
-        Howler.stop();
-        playKouk();
-      }
-
       return element;
     };
 
@@ -113,6 +77,28 @@ export default function Songs() {
       const key = getKey(event);
       if (key) {
         key.classList.add("active");
+      }
+      const parsedKey = event.key.toLowerCase().replace("\\", "\\\\");
+
+      if (parsedKey in audioFiles) {
+        playAudio(parsedKey);
+      }
+      if (parsedKey === "w") {
+        Howler.stop();
+      }
+      if (parsedKey === "v") {
+        if (currentlyPlaying && currentlyPlaying.playing()) {
+          currentlyPlaying.pause();
+        } else if (currentlyPlaying) {
+          currentlyPlaying.play();
+        }
+      }
+      if (parsedKey === "x") {
+        if (currentlyPlaying && !currentlyPlaying.playing()) {
+          setTimeout(() => {
+            currentlyPlaying.play();
+          }, 500);
+        }
       }
     };
     document.addEventListener("keydown", addActiveClassOnKeydown);
@@ -128,73 +114,27 @@ export default function Songs() {
     // mouseclick events
     const addActiveClassOnMousedown = (event) => {
       if (event.target.dataset.key) {
-        console.log(event.target.dataset.key);
         event.target.classList.add("active");
-        if (event.target.dataset.key === "n") {
-          Howler.stop();
-          playNobinobi();
-        }
-        if (event.target.dataset.key === "s") {
-          Howler.stop();
-          playShitsur();
-        }
-        if (event.target.dataset.key === "k") {
-          Howler.stop();
-          playKikai();
-        }
-        if (event.target.dataset.key === "y") {
-          Howler.stop();
-          playYoishio();
-        }
-        if (event.target.dataset.key === "g") {
-          Howler.stop();
-          playSut();
-        }
-        if (event.target.dataset.key === "a") {
-          Howler.stop();
-          playKaiko();
-        }
-        if (event.target.dataset.key === "t") {
-          Howler.stop();
-          playKoukaiInst();
-        }
-        if (event.target.dataset.key === "u") {
-          Howler.stop();
-          playUkiyo();
-        }
-        if (event.target.dataset.key === "h") {
-          Howler.stop();
-          playHitom();
-        }
-        if (event.target.dataset.key === "o") {
-          Howler.stop();
-          playKyu();
-        }
-        if (event.target.dataset.key === "z") {
-          Howler.stop();
-          playNoz();
-        }
-        if (event.target.dataset.key === "p") {
-          Howler.stop();
-          playKep();
-        }
-        if (event.target.dataset.key === "i") {
-          Howler.stop();
-          playKouk();
-        }
-        if (event.target.dataset.key === "r") {
-          Howler.stop();
-          playRyoko();
+
+        if (event.target.dataset.key in audioFiles) {
+          playAudio(event.target.dataset.key);
         }
         if (event.target.dataset.key === "w") {
           Howler.stop();
         }
         if (event.target.dataset.key === "v") {
-          Howler.stop();
+          if (currentlyPlaying && currentlyPlaying.playing()) {
+            currentlyPlaying.pause();
+          } else if (currentlyPlaying) {
+            currentlyPlaying.play();
+          }
         }
         if (event.target.dataset.key === "x") {
-          Howler.stop();
-          playKouk();
+          if (currentlyPlaying && !currentlyPlaying.playing()) {
+            setTimeout(() => {
+              currentlyPlaying.play();
+            }, 500);
+          }
         }
       }
     };
@@ -265,170 +205,19 @@ export default function Songs() {
 
       if (key) {
         animate(key);
-        console.log("key:", key);
       }
     });
 
     document.addEventListener("click", (event) => {
       if (event.target.dataset.key) {
         animate(event.target);
-        console.log("event.target:", event.target);
       }
     });
 
     window.addEventListener("load", () => {
       const key = document.querySelector(`[data-key="enter"]`);
       animate(key);
-      console.log("key:", key);
     });
-
-    var Nobinobi = new Howl({
-      preload: true,
-      autoplay: false,
-      html5: true,
-      src: [NobinobiImport],
-    });
-
-    const playNobinobi = () => {
-      Nobinobi.play();
-    };
-    var Hitom = new Howl({
-      preload: true,
-      autoplay: false,
-      html5: true,
-      src: [HitomImport],
-    });
-
-    const playHitom = () => {
-      Hitom.play();
-    };
-
-    var Shitsur = new Howl({
-      preload: true,
-      autoplay: false,
-      html5: true,
-      src: [ShitsurImport],
-    });
-
-    const playShitsur = () => {
-      Shitsur.play();
-    };
-    var Kikai = new Howl({
-      preload: true,
-      autoplay: false,
-      html5: true,
-      src: [KikaiImport],
-    });
-
-    const playKikai = () => {
-      Kikai.play();
-    };
-
-    var Yoishio = new Howl({
-      preload: true,
-      autoplay: false,
-      html5: true,
-      src: [YoishioImport],
-    });
-
-    const playYoishio = () => {
-      Yoishio.play();
-    };
-    var Sut = new Howl({
-      preload: true,
-      autoplay: false,
-      html5: true,
-      src: [SutImport],
-    });
-
-    const playSut = () => {
-      Sut.play();
-    };
-
-    var Kaiko = new Howl({
-      preload: true,
-      autoplay: false,
-      html5: true,
-      src: [KaikoImport],
-    });
-
-    const playKaiko = () => {
-      Kaiko.play();
-    };
-    var KoukaiInst = new Howl({
-      preload: true,
-      autoplay: false,
-      html5: true,
-      src: [KoukaiInstImport],
-    });
-
-    const playKoukaiInst = () => {
-      KoukaiInst.play();
-    };
-
-    var Ukiyo = new Howl({
-      preload: true,
-      autoplay: false,
-      html5: true,
-      src: [UkiyoImport],
-    });
-
-    const playUkiyo = () => {
-      Ukiyo.play();
-    };
-    var Kyu = new Howl({
-      preload: true,
-      autoplay: false,
-      html5: true,
-      src: [KyuImport],
-    });
-
-    const playKyu = () => {
-      Kyu.play();
-    };
-
-    var Noz = new Howl({
-      preload: true,
-      autoplay: false,
-      html5: true,
-      src: [NozImport],
-    });
-
-    const playNoz = () => {
-      Noz.play();
-    };
-
-    var Kep = new Howl({
-      preload: true,
-      autoplay: false,
-      html5: true,
-      src: [KepImport],
-    });
-
-    const playKep = () => {
-      Kep.play();
-    };
-
-    var Kouk = new Howl({
-      preload: true,
-      autoplay: false,
-      html5: true,
-      src: [KoukImport],
-    });
-
-    const playKouk = () => {
-      Kouk.play();
-    };
-    var Ryoko = new Howl({
-      preload: true,
-      autoplay: false,
-      html5: true,
-      src: [RyokoImport],
-    });
-
-    const playRyoko = () => {
-      Ryoko.play();
-    };
 
     return () => {
       // cleanup
@@ -441,34 +230,39 @@ export default function Songs() {
     };
   }, []);
 
-
   const [hasAlertBeenShown, setHasAlertBeenShown] = useState(false);
-  const showAlertAndRemoveListener = useCallback((event) => {
-    // If the alert has already been shown, return early
-    if (hasAlertBeenShown) {
-      return;
-    }
-  
-    // Display the alert
-    alert('🔊 Clicking the soundboard or using the corresponding keys will play music and display mild lights. Please prepare the appropriate accommodations if necessary 🔊');
-  
-    // Set the flag to true
-    setHasAlertBeenShown(true);
-  
-    // Remove the event listener
-    document.removeEventListener('click', showAlertAndRemoveListener);
-  
-    // Stop the Howler
-    Howler.stop();
-  }, [hasAlertBeenShown, setHasAlertBeenShown]);
+  const showAlertAndRemoveListener = useCallback(
+    (event) => {
+      // If the alert has already been shown, return early
+      if (hasAlertBeenShown) {
+        return;
+      }
+      // Stop the Howler
+      Howler.stop();
+      // Display the alert
+      alert(
+        "🔊 Clicking the soundboard or using the corresponding keys will play music and display mild lights. Please prepare the appropriate accommodations if necessary 🔊"
+      );
+
+      // Set the flag to true
+      setHasAlertBeenShown(true);
+
+      // Remove the event listener
+      document.removeEventListener("click", showAlertAndRemoveListener);
+    },
+    [hasAlertBeenShown, setHasAlertBeenShown]
+  );
 
   useEffect(() => {
     // Add the event listener
-    document.addEventListener('click', showAlertAndRemoveListener, { capture: true, once: true });
-  
+    document.addEventListener("click", showAlertAndRemoveListener, {
+      capture: true,
+      once: true,
+    });
+
     // Cleanup function to remove the event listener when the component unmounts
     return () => {
-      document.removeEventListener('click', showAlertAndRemoveListener);
+      document.removeEventListener("click", showAlertAndRemoveListener);
     };
   }, [showAlertAndRemoveListener]);
 
@@ -737,27 +531,25 @@ export default function Songs() {
           </ol>
         </div>
       </div>
-      <div
-        className="md:hidden block text-xs mt-[-20%] overflow-y-auto"
-      >
+      <div className="md:hidden block text-xs mt-[-20%] overflow-y-auto">
         <h2 className="text-base">10PRINTTUNES</h2>
-          <Divider flexItem className="mb-2 w-[80%]" />
+        <Divider flexItem className="mb-2 w-[80%]" />
         <ol className="leading-5">
-            <li>1. Nozomi 希 | Hope</li>
-            <li>2. Kyusoku 休息 | Rest</li>
-            <li>3. Ryoko 旅行 | Trip</li>
-            <li>4. Hitomebore 目惚れ | Admiration</li>
-            <li>5. Ukiyo 浮世 | World</li>
-            <li>6. Koukai 後悔 | Regret</li>
-            <li>7. Koukai Instrumental 後悔 | Regret</li>
-            <li>8. Kaikoshumi 懐古趣味 | Nostalgia</li>
-            <li>9. Yoisho よいしょ | Good Day</li>
-            <li>10. Sutageiza スターゲイザー | Stargazer</li>
-            <li>11. Keppaku 潔白 | Innocence</li>
-            <li>12. Kikai 機械 | Chance</li>
-            <li>13. Shitsuren 失恋 | Broken Heart</li>
-            <li>14. Nobinobi 伸び伸び | Carefree</li>
-          </ol>
+          <li>1. Nozomi 希 | Hope</li>
+          <li>2. Kyusoku 休息 | Rest</li>
+          <li>3. Ryoko 旅行 | Trip</li>
+          <li>4. Hitomebore 目惚れ | Admiration</li>
+          <li>5. Ukiyo 浮世 | World</li>
+          <li>6. Koukai 後悔 | Regret</li>
+          <li>7. Koukai Instrumental 後悔 | Regret</li>
+          <li>8. Kaikoshumi 懐古趣味 | Nostalgia</li>
+          <li>9. Yoisho よいしょ | Good Day</li>
+          <li>10. Sutageiza スターゲイザー | Stargazer</li>
+          <li>11. Keppaku 潔白 | Innocence</li>
+          <li>12. Kikai 機械 | Chance</li>
+          <li>13. Shitsuren 失恋 | Broken Heart</li>
+          <li>14. Nobinobi 伸び伸び | Carefree</li>
+        </ol>
       </div>
     </>
   );
