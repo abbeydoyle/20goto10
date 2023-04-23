@@ -115,44 +115,7 @@ export default function Songs() {
     const addActiveClassOnMousedown = (event) => {
       if (event.target.dataset.key) {
         event.target.classList.add("active");
-    
-        const parsedKey = event.target.dataset.key.toLowerCase();
-    
-        if (parsedKey in audioFiles) {
-          playAudio(parsedKey);
-        }
-        if (parsedKey === "w") {
-          Howler.stop();
-        }
-        if (parsedKey === "v") {
-          if (currentlyPlaying && currentlyPlaying.playing()) {
-            currentlyPlaying.pause();
-          } else if (currentlyPlaying) {
-            currentlyPlaying.play();
-          }
-        }
-        if (parsedKey === "x") {
-          if (currentlyPlaying && !currentlyPlaying.playing()) {
-            setTimeout(() => {
-              currentlyPlaying.play();
-            }, 500);
-          }
-        }
-      }
-    };
-    document.addEventListener("mousedown", addActiveClassOnMousedown);
 
-    const removeActiveClassOnMouseup = (event) => {
-      if (event.target.dataset.key) {
-        event.target.classList.remove("active");
-      }
-    };
-    document.addEventListener("mouseup", removeActiveClassOnMouseup);
-
-    // touchstart events
-    const addActiveClassOnTouchstart = (event) => {
-      if (event.target.dataset.key) {
-        event.target.classList.add("active");
         if (event.target.dataset.key in audioFiles) {
           playAudio(event.target.dataset.key);
         }
@@ -175,14 +138,29 @@ export default function Songs() {
         }
       }
     };
-    document.addEventListener("touchstart", addActiveClassOnTouchstart);
+    document.addEventListener("mousedown", addActiveClassOnMousedown);
+
+    const removeActiveClassOnMouseup = (event) => {
+      if (event.target.dataset.key) {
+        event.target.classList.remove("active");
+      }
+    };
+    document.addEventListener("mouseup", removeActiveClassOnMouseup);
+
+    // touchstart events
+    const addActiveClassOnTouchstart = (event) => {
+      if (event.target.dataset.key) {
+        event.target.classList.add("active");
+      }
+    };
+    document.addEventListener("mousedown", addActiveClassOnTouchstart);
 
     const removeActiveClassOnTouchend = (event) => {
       if (event.target.dataset.key) {
         event.target.classList.remove("active");
       }
     };
-    document.addEventListener("touchend", removeActiveClassOnTouchend);
+    document.addEventListener("mouseup", removeActiveClassOnTouchend);
 
     const animate = (element) => {
       const hueColor = Math.floor(Math.random() * (360 - 0 + 1)) + 0;
@@ -229,9 +207,6 @@ export default function Songs() {
         animate(key);
       }
     });
-
-    document.addEventListener("pointerdown", addActiveClassOnMousedown);
-document.addEventListener("pointerup", removeActiveClassOnMouseup);
 
     document.addEventListener("click", (event) => {
       if (event.target.dataset.key) {
