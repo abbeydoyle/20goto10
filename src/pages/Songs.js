@@ -115,21 +115,23 @@ export default function Songs() {
     const addActiveClassOnMousedown = (event) => {
       if (event.target.dataset.key) {
         event.target.classList.add("active");
-
-        if (event.target.dataset.key in audioFiles) {
-          playAudio(event.target.dataset.key);
+    
+        const parsedKey = event.target.dataset.key.toLowerCase();
+    
+        if (parsedKey in audioFiles) {
+          playAudio(parsedKey);
         }
-        if (event.target.dataset.key === "w") {
+        if (parsedKey === "w") {
           Howler.stop();
         }
-        if (event.target.dataset.key === "v") {
+        if (parsedKey === "v") {
           if (currentlyPlaying && currentlyPlaying.playing()) {
             currentlyPlaying.pause();
           } else if (currentlyPlaying) {
             currentlyPlaying.play();
           }
         }
-        if (event.target.dataset.key === "x") {
+        if (parsedKey === "x") {
           if (currentlyPlaying && !currentlyPlaying.playing()) {
             setTimeout(() => {
               currentlyPlaying.play();
