@@ -1,4 +1,5 @@
 import React from "react";
+import Divider from "@mui/material/Divider";
 
 // modal to appear when item as been added to cart
 export default function PhoneNo({ setOpenPhoneNoModal }) {
@@ -33,12 +34,13 @@ export default function PhoneNo({ setOpenPhoneNoModal }) {
               </svg>
               <span class="sr-only">Close modal</span>
             </button>
-            <div className="mt-3 mb-4 pl-3 sm:flex">
+            <div className="mt-3 mb-4 sm:flex">
               <div className="mt-2 text-center sm:ml-[4rem] sm:text-left -ml-8">
-                <h4 className="text-xl font-medium text-[#2e131c] pb-4">
+                <h4 className="text-2xl font-medium text-[#2e131c] pb-4">
                   Gotcha
+                  <Divider flexItem className="mb-2 ml-[-5%]" variant="middle" />
                 </h4>
-                <h5 className="text-lg font-small text-[#2e131c] pb-4">
+                <h5 className="text-base font-small text-[#2e131c] pb-4">
                   as if
                 </h5>
                 <div className="flex justify-around ">

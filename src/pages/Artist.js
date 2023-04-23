@@ -3,6 +3,7 @@ import About from "../components/ArtistPages/About";
 import Dog from "../components/ArtistPages/Dog";
 import PhoneNo from "../components/ArtistPages/PhoneNo";
 import SSN from "../components/ArtistPages/SSN";
+import Commands from "../components/ArtistPages/Commands";
 import Typewriter from "typewriter-effect";
 import Stack from "@mui/material/Stack";
 
@@ -146,6 +147,7 @@ export default function Artist() {
   const [showDogModal, setshowDogModal] = useState(false);
   const [showPhoneNoModal, setshowPhoneNoModal] = useState(false);
   const [showSSNModal, setshowSSNModal] = useState(false);
+  const [showCommandsModal, setshowCommandsModal] = useState(false);
 
   const submit = (event) => {
     event.preventDefault();
@@ -154,9 +156,9 @@ export default function Artist() {
         case "":
           return alert("please type a command");
         case "ls":
-          return alert("'about', 'dog', 'ssn', 'phoneno', 'ls'");
+          return setshowCommandsModal(true);
         case "5":
-          return alert("'about', 'dog', 'ssn', 'phoneno', 'ls'");
+          return setshowCommandsModal(true);
         case "1":
           return setshowAboutModal(true);
         case "about":
@@ -193,17 +195,20 @@ export default function Artist() {
               <Typewriter
                 onInit={(typewriter) => {
                   typewriter
-                  .pauseFor(1000)
+                    .pauseFor(500)
                     .typeString("1. about - a small personal profile")
-                    .pauseFor(1000)
+                    .pauseFor(500)
                     .typeString(`<br/> 2. dog - a picture of my dog`)
-                    .pauseFor(1000)
+                    .pauseFor(500)
                     .typeString(`<br/> 3. ssn - my social security number`)
-                    .pauseFor(1000)
+                    .pauseFor(500)
                     .typeString(`<br/> 4. phoneno - my phone number ;)`)
-                    .pauseFor(1000)
+                    .pauseFor(500)
                     .typeString(`<br/> 5. ls - a list of commands`)
                     .start();
+                }}
+                options={{
+                  delay: 100,
                 }}
               />
             </li>
@@ -354,6 +359,7 @@ export default function Artist() {
         <PhoneNo setOpenPhoneNoModal={setshowPhoneNoModal} />
       )}
       {showSSNModal && <SSN setOpenSSNModal={setshowSSNModal} />}
+      {showCommandsModal && <Commands setOpenCommandsModal={setshowCommandsModal} />}
     </>
   );
 }

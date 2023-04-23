@@ -2,14 +2,14 @@ import React from "react";
 import Divider from "@mui/material/Divider";
 
 // modal to appear when item as been added to cart
-export default function SSN({ setOpenSSNModal }) {
+export default function Commands({ setOpenCommandsModal }) {
   return (
     <>
       <div className="fixed inset-0 z-10 overflow-y-auto">
         {/* exit modal when clicking outside of modal element */}
         <div
           className="fixed inset-0 w-full h-full bg-black opacity-70"
-          onClick={() => setOpenSSNModal(false)}
+          onClick={() => setOpenCommandsModal(false)}
         ></div>
         <div className="flex items-center min-h-screen py-8">
           <div className="relative w-full max-w-lg p-4 mx-auto bg-white rounded-md shadow-lg">
@@ -17,7 +17,7 @@ export default function SSN({ setOpenSSNModal }) {
               type="button"
               class="text-[#503674] bg-transparent hover:bg-[#a371b1] hover:text-[#2e131c] rounded-lg text-sm p-1.5 ml-auto inline-flex items-center float-right"
               data-modal-hide="defaultModal"
-              onClick={() => setOpenSSNModal(false)}
+              onClick={() => setOpenCommandsModal(false)}
             >
               <svg
                 aria-hidden="true"
@@ -37,15 +37,27 @@ export default function SSN({ setOpenSSNModal }) {
             <div className="mt-3 mb-4 sm:flex">
               <div className="mt-2 text-center sm:ml-[4rem] sm:text-left -ml-8">
                 <h4 className="text-2xl font-medium text-[#2e131c] pb-4">
-                  you thought lol
+                  Input Options
                   <Divider flexItem className="mb-2 ml-[-5%]" variant="middle" />
                 </h4>
                 <h5 className="text-base font-small text-[#2e131c] pb-4">
-                  cmon now
+                  1. about
+                </h5>
+                <h5 className="text-base font-small text-[#2e131c] pb-4">
+                  2. dog
+                </h5>
+                <h5 className="text-base font-small text-[#2e131c] pb-4">
+                  3. ssn
+                </h5>
+                <h5 className="text-base font-small text-[#2e131c] pb-4">
+                  4. phoneno
+                </h5>
+                <h5 className="text-base font-small text-[#2e131c] pb-4">
+                  5. ls
                 </h5>
                 <div className="flex justify-around ">
                   <button
-                    onClick={() => setOpenSSNModal(false)}
+                    onClick={() => setOpenCommandsModal(false)}
                     className="mt-2 text-[15px] leading-relaxed text-[#503674] hover:text-[#2e131c] underline"
                   >
                     Back to site
