@@ -1,4 +1,3 @@
-// import React, { useEffect, useState } from "react";
 import React, { useEffect, useState, useCallback } from "react";
 import Slider from "@mui/material/Slider";
 import Stack from "@mui/material/Stack";
@@ -6,37 +5,23 @@ import Divider from "@mui/material/Divider";
 import { BsFillVolumeMuteFill, BsFillVolumeUpFill } from "react-icons/bs";
 import { AiFillFastBackward, AiFillFastForward } from "react-icons/ai";
 import { Howl, Howler } from "howler";
-
-import NobinobiImport from "../assets/audio/Nobinobi.mp3";
-import HitomImport from "../assets/audio/Hitomebore.mp3";
-import ShitsurImport from "../assets/audio/Shitsuren.mp3";
-import KikaiImport from "../assets/audio/Kikai.mp3";
-import YoishioImport from "../assets/audio/Yoisho.mp3";
-import SutImport from "../assets/audio/Sutageiza.mp3";
-import KaikoImport from "../assets/audio/Kaikoshumi.mp3";
-import KoukaiInstImport from "../assets/audio/KoukaiInstrumental.mp3";
-import UkiyoImport from "../assets/audio/Ukiyo.mp3";
-import KyuImport from "../assets/audio/Kyusoku.mp3";
-import NozImport from "../assets/audio/Nozomi.mp3";
-import KepImport from "../assets/audio/Keppaku.mp3";
-import KoukImport from "../assets/audio/Koukai.mp3";
-import RyokoImport from "../assets/audio/Ryoko.mp3";
+import * as audioImports from "../assets/audio/audio.js";
 
 const audioFiles = {
-  n: NobinobiImport,
-  s: ShitsurImport,
-  k: KikaiImport,
-  y: YoishioImport,
-  g: SutImport,
-  a: KaikoImport,
-  t: KoukaiInstImport,
-  u: UkiyoImport,
-  h: HitomImport,
-  o: KyuImport,
-  z: NozImport,
-  p: KepImport,
-  i: KoukImport,
-  r: RyokoImport,
+  n: audioImports.NobinobiImport,
+  s: audioImports.ShitsurImport,
+  k: audioImports.KikaiImport,
+  y: audioImports.YoishioImport,
+  g: audioImports.SutImport,
+  a: audioImports.KaikoImport,
+  t: audioImports.KoukaiInstImport,
+  u: audioImports.UkiyoImport,
+  h: audioImports.HitomImport,
+  o: audioImports.KyuImport,
+  z: audioImports.NozImport,
+  p: audioImports.KepImport,
+  i: audioImports.KoukImport,
+  r: audioImports.RyokoImport,
 };
 const howlInstances = {};
 let currentlyPlaying = null;
@@ -62,105 +47,49 @@ const playAudio = (key) => {
 export default function Songs() {
   useEffect(() => {
     const keysArr = [...document.querySelectorAll(".mixbutton")];
-
-    const getKey = (event) => {
-      const parsedKey = event.key.toLowerCase().replace("\\", "\\\\");
-      const parsedCode = event.code.toLowerCase();
-      const element =
-        document.querySelector(`[data-key="${parsedCode}"]`) ||
-        document.querySelector(`[data-key="${parsedKey}"]`);
-      return element;
-    };
-
-    // keyboard events
-    const addActiveClassOnKeydown = (event) => {
-      const key = getKey(event);
-      if (key) {
-        key.classList.add("active");
-      }
-      const parsedKey = event.key.toLowerCase().replace("\\", "\\\\");
-
-      if (parsedKey in audioFiles) {
-        playAudio(parsedKey);
-      }
-      if (parsedKey === "w") {
-        Howler.stop();
-      }
-      if (parsedKey === "v") {
-        if (currentlyPlaying && currentlyPlaying.playing()) {
-          currentlyPlaying.pause();
-        } else if (currentlyPlaying) {
-          currentlyPlaying.play();
+    const handleKeyPress = (key, eventType) => {
+      const keyElement = document.querySelector(`[data-key="${key}"]`);
+    
+      if (!keyElement) return;
+    
+      keyElement.classList.toggle("active", eventType === "keydown" || eventType === "mousedown");
+    
+      if (eventType === "keydown" || eventType === "mousedown") {
+        if (key in audioFiles) {
+          playAudio(key);
         }
-      }
-      if (parsedKey === "x") {
-        if (currentlyPlaying && !currentlyPlaying.playing()) {
-          setTimeout(() => {
-            currentlyPlaying.play();
-          }, 500);
-        }
-      }
-    };
-    document.addEventListener("keydown", addActiveClassOnKeydown);
-
-    const removeActiveClassOnKeyup = (event) => {
-      const key = getKey(event);
-      if (key) {
-        key.classList.remove("active");
-      }
-    };
-    document.addEventListener("keyup", removeActiveClassOnKeyup);
-
-    // mouseclick events
-    const addActiveClassOnMousedown = (event) => {
-      if (event.target.dataset.key) {
-        event.target.classList.add("active");
-
-        if (event.target.dataset.key in audioFiles) {
-          playAudio(event.target.dataset.key);
-        }
-        if (event.target.dataset.key === "w") {
+        if (key === "w") {
           Howler.stop();
         }
-        if (event.target.dataset.key === "v") {
+        if (key === "v") {
           if (currentlyPlaying && currentlyPlaying.playing()) {
             currentlyPlaying.pause();
           } else if (currentlyPlaying) {
             currentlyPlaying.play();
           }
         }
-        if (event.target.dataset.key === "x") {
+        if (key === "x") {
           if (currentlyPlaying && !currentlyPlaying.playing()) {
             setTimeout(() => {
               currentlyPlaying.play();
             }, 500);
           }
         }
+        animate(keyElement);
       }
     };
-    document.addEventListener("mousedown", addActiveClassOnMousedown);
-
-    const removeActiveClassOnMouseup = (event) => {
-      if (event.target.dataset.key) {
-        event.target.classList.remove("active");
+    
+    const handleKeyEvents = (event) => {
+      const parsedKey = event.key.toLowerCase().replace("\\", "\\\\");
+      handleKeyPress(parsedKey, event.type);
+    };
+    
+    const handleClickEvents = (event) => {
+      const key = event.target.dataset.key;
+      if (key) {
+        handleKeyPress(key, event.type);
       }
     };
-    document.addEventListener("mouseup", removeActiveClassOnMouseup);
-
-    // touchstart events
-    const addActiveClassOnTouchstart = (event) => {
-      if (event.target.dataset.key) {
-        event.target.classList.add("active");
-      }
-    };
-    document.addEventListener("mousedown", addActiveClassOnTouchstart);
-
-    const removeActiveClassOnTouchend = (event) => {
-      if (event.target.dataset.key) {
-        event.target.classList.remove("active");
-      }
-    };
-    document.addEventListener("mouseup", removeActiveClassOnTouchend);
 
     const animate = (element) => {
       const hueColor = Math.floor(Math.random() * (360 - 0 + 1)) + 0;
@@ -200,34 +129,17 @@ export default function Songs() {
       });
     };
 
-    document.addEventListener("keydown", (event) => {
-      const key = getKey(event);
-
-      if (key) {
-        animate(key);
-      }
-    });
-
-    document.addEventListener("click", (event) => {
-      if (event.target.dataset.key) {
-        animate(event.target);
-      }
-    });
-
-    window.addEventListener("load", () => {
-      const key = document.querySelector(`[data-key="enter"]`);
-      animate(key);
-    });
-
-    return () => {
-      // cleanup
-      document.removeEventListener("keydown", addActiveClassOnKeydown);
-      document.removeEventListener("keyup", removeActiveClassOnKeyup);
-      document.removeEventListener("mousedown", addActiveClassOnMousedown);
-      document.removeEventListener("mouseup", removeActiveClassOnMouseup);
-      document.removeEventListener("touchstart", addActiveClassOnTouchstart);
-      document.removeEventListener("touchend", removeActiveClassOnTouchend);
-    };
+      document.addEventListener("keydown", handleKeyEvents);
+      document.addEventListener("keyup", handleKeyEvents);
+      document.addEventListener("mousedown", handleClickEvents);
+      document.addEventListener("mouseup", handleClickEvents);
+  
+      return () => {
+        document.removeEventListener("keydown", handleKeyEvents);
+        document.removeEventListener("keyup", handleKeyEvents);
+        document.removeEventListener("mousedown", handleClickEvents);
+        document.removeEventListener("mouseup", handleClickEvents);
+      };
   }, []);
 
   const [hasAlertBeenShown, setHasAlertBeenShown] = useState(false);
