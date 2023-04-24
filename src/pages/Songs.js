@@ -274,6 +274,17 @@ export default function Songs() {
   function valuetext(value) {
     return `${value}%`;
   }
+  const [playbackRate, setPlaybackRate] = useState(1);
+  const handlePlaybackRateChange = (event, newRate) => {
+    setPlaybackRate(newRate);
+    if (currentlyPlaying) {
+      currentlyPlaying.rate(newRate);
+    }
+  };
+
+  function playbackRateText(value) {
+    return `${value}x`;
+  }
 
   return (
     <>
@@ -349,15 +360,16 @@ export default function Songs() {
                 <Stack justifyContent="center" alignItems="center">
                   <AiFillFastForward className="h-8 w-8 text-center" />
                   <Slider
-                    aria-label="speed"
-                    orientation="vertical"
-                    defaultValue={100}
-                    getAriaValueText={valuetext}
-                    step={10}
+                    orientation="vertical"                
                     marks
-                    min={50}
-                    max={150}
+                    value={playbackRate}
+                    min={0.5}
+                    max={2}
+                    step={0.1}
+                    onChange={handlePlaybackRateChange}
                     valueLabelDisplay="auto"
+                    aria-labelledby="playback-rate-slider"
+                    getAriaValueText={playbackRateText}
                     sx={{
                       "& .MuiSlider-track": {
                         width: 20,
