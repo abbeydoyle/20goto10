@@ -440,17 +440,17 @@ export default function Songs() {
           <ol>
             <li>1. Nozomi 希 | Hope</li>
             <li>2. Kyusoku 休息 | Rest</li>
-            <li>3. Ryoko 旅行 | Trip</li>
-            <li>4. Hitomebore 目惚れ | Admiration</li>
-            <li>5. Ukiyo 浮世 | World</li>
+            <li>3. Ryoko 旅行 | Travel</li>
+            <li>4. Hitomebore 目惚れ | Instant Admiration</li>
+            <li>5. Ukiyo 浮世 | Living in the Moment</li>
             <li>6. Koukai 後悔 | Regret</li>
             <li>7. Koukai Instrumental 後悔 | Regret</li>
             <li>8. Kaikoshumi 懐古趣味 | Nostalgia</li>
-            <li>9. Yoisho よいしょ | Good Day</li>
+            <li>9. Yoisho よいしょ | An interjection of strain</li>
             <li>10. Sutageiza スターゲイザー | Stargazer</li>
             <li>11. Keppaku 潔白 | Innocence</li>
-            <li>12. Kikai 機械 | Chance</li>
-            <li>13. Shitsuren 失恋 | Broken Heart</li>
+            <li>12. Kikai 機械 | Machine</li>
+            <li>13. Shitsuren 失恋 | Heartbreak</li>
             <li>14. Nobinobi 伸び伸び | Carefree</li>
           </ol>
         </div>
@@ -461,17 +461,17 @@ export default function Songs() {
         <ol className="leading-5">
           <li>1. Nozomi 希 | Hope</li>
           <li>2. Kyusoku 休息 | Rest</li>
-          <li>3. Ryoko 旅行 | Trip</li>
-          <li>4. Hitomebore 目惚れ | Admiration</li>
-          <li>5. Ukiyo 浮世 | World</li>
+          <li>3. Ryoko 旅行 | Travel</li>
+          <li>4. Hitomebore 目惚れ | Instant Admiration</li>
+          <li>5. Ukiyo 浮世 | Living in the Moment</li>
           <li>6. Koukai 後悔 | Regret</li>
           <li>7. Koukai Instrumental 後悔 | Regret</li>
           <li>8. Kaikoshumi 懐古趣味 | Nostalgia</li>
-          <li>9. Yoisho よいしょ | Good Day</li>
+          <li>9. Yoisho よいしょ | An interjection of strain</li>
           <li>10. Sutageiza スターゲイザー | Stargazer</li>
           <li>11. Keppaku 潔白 | Innocence</li>
-          <li>12. Kikai 機械 | Chance</li>
-          <li>13. Shitsuren 失恋 | Broken Heart</li>
+          <li>12. Kikai 機械 | Machine</li>
+          <li>13. Shitsuren 失恋 | Heartbreak</li>
           <li>14. Nobinobi 伸び伸び | Carefree</li>
         </ol>
       </div>
