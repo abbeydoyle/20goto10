@@ -45,7 +45,7 @@ Object.keys(audioFiles).forEach((key) => {
   howlInstances[key] = new Howl({
     preload: true,
     autoplay: false,
-    html5: true,
+    // html5: true,
     src: [audioFiles[key]],
   });
 });
