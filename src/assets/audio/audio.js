@@ -12,3 +12,4 @@ export { default as UkiyoImport } from "./Ukiyo.mp3";
 export { default as YoishioImport } from "./Yoisho.mp3";
 export { default as KaikoImport } from "./Kaikoshumi.mp3";
 export { default as HitomImport } from "./Hitomebore.mp3";
+export { default as TaimaImport } from "./Taima.mp3";

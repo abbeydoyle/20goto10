@@ -22,6 +22,7 @@ const audioFiles = {
   p: audioImports.KepImport,
   i: audioImports.KoukImport,
   r: audioImports.RyokoImport,
+  t: audioImports.TaimaImport,
 };
 const howlInstances = {};
 let currentlyPlaying = null;
@@ -420,9 +421,9 @@ export default function Songs() {
                 Nozomi <br /> 希
                 <div className="absolute bottom-1 right-1">z</div>
               </div>
-              <div className="mixbutton relative green rounded-lg" data-key="e">
-                Unreleased <br /> 未発表
-                <div className="absolute bottom-1 right-1">e</div>
+              <div className="mixbutton relative green rounded-lg" data-key="t">
+                Taima <br /> 大麻
+                <div className="absolute bottom-1 right-1">t</div>
               </div>
               <div
                 className="mixbutton relative yellow rounded-lg"
@@ -452,6 +453,7 @@ export default function Songs() {
             <li>12. Kikai 機械 | Machine</li>
             <li>13. Shitsuren 失恋 | Heartbreak</li>
             <li>14. Nobinobi 伸び伸び | Carefree</li>
+            <li>15. Taima 大麻 | Cannabis</li>
           </ol>
         </div>
       </div>
@@ -473,6 +475,7 @@ export default function Songs() {
           <li>12. Kikai 機械 | Machine</li>
           <li>13. Shitsuren 失恋 | Heartbreak</li>
           <li>14. Nobinobi 伸び伸び | Carefree</li>
+          <li>15. Taima 大麻 | Cannabis</li>
         </ol>
       </div>
     </>
