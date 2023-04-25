@@ -14,7 +14,7 @@ const audioFiles = {
   y: audioImports.YoishioImport,
   g: audioImports.SutImport,
   a: audioImports.KaikoImport,
-  t: audioImports.KoukaiInstImport,
+  l: audioImports.KoukaiInstImport,
   u: audioImports.UkiyoImport,
   h: audioImports.HitomImport,
   o: audioImports.KyuImport,
@@ -393,10 +393,10 @@ export default function Songs() {
                 Koukai <br /> 後悔
                 <div className="absolute bottom-1 right-1">i</div>
               </div>
-              <div className="mixbutton relative green rounded-lg" data-key="t">
+              <div className="mixbutton relative green rounded-lg" data-key="l">
                 Koukai <br /> Instrumental <br />
                 後悔
-                <div className="absolute bottom-1 right-1">t</div>
+                <div className="absolute bottom-1 right-1">l</div>
               </div>
               <div
                 className="mixbutton relative yellow rounded-lg"
