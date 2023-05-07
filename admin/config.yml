@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
   repo: abbeydoyle/20goto10
-  access_token: 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
+  access_token: process.env.GIT_GATEWAY_TOKEN
 
 publish_mode: editorial_workflow
 
