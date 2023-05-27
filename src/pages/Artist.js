@@ -117,40 +117,36 @@ export default function Artist() {
   const submit = (event) => {
     event.preventDefault();
     if (message) {
-      var inputmessage = message.toLowerCase();
-      switch (inputmessage) {
+      switch (message) {
+        case "":
+          return alert("please type a command");
         case "ls":
+          return setshowCommandsModal(true);
         case "5":
-          setshowCommandsModal(true);
-          setMessage("");
-          break
+          return setshowCommandsModal(true);
         case "1":
+          return setshowAboutModal(true);
         case "about":
-          setshowAboutModal(true);
-          setMessage("");
-          break
+          return setshowAboutModal(true);
         case "2":
+          return setshowDogModal(true);
         case "dog":
-          setshowDogModal(true);
-          setMessage("");
-          break
+          return setshowDogModal(true);
         case "3":
+          return setshowPhoneNoModal(true);
         case "phoneno":
-          setshowPhoneNoModal(true);
-          setMessage("");
-          break
+          return setshowPhoneNoModal(true);
         case "4":
+          return setshowSSNModal(true);
         case "ssn":
-          setshowSSNModal(true);
-          setMessage("");
-          break
+          return setshowSSNModal(true);
         default:
-          alert("this wasn't a command :/");
-          setMessage("");
+          return null;
       }
     } else {
       alert("this wasn't a command :/");
     }
+    setMessage("");
   };
 
   return (
